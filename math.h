@@ -1,9 +1,9 @@
 #pragma once
 
-#include "math/vec.h"
-#include "math/mat.h"
-#include "math/quat.h"
-#include "math/util.h"
+#include "func.h"
+#include "vec.h"
+#include "mat.h"
+#include "quat.h"
 
 namespace oak {
 

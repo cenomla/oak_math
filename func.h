@@ -7,3 +7,4 @@ namespace oak::math {
 	float abs(float v);
 
 }
+

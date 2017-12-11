@@ -2,8 +2,8 @@
 
 #include <cmath>
 
+#include "func.h"
 #include "mat.h"
-#include "util.h"
 
 namespace oak::math {
 
