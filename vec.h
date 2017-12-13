@@ -176,6 +176,10 @@ namespace oak::math {
 	Vec3& operator/=(Vec3& a, const Vec3& b);
 	Vec4& operator/=(Vec4& a, const Vec4& b);
 
+	Vec2 round(const Vec2& v);
+	Vec3 round(const Vec3& v);
+	Vec4 round(const Vec4& v);
+
 	Vec2 abs(const Vec2& v);
 	Vec3 abs(const Vec3& v);
 	Vec4 abs(const Vec4& v);

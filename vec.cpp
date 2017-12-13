@@ -513,6 +513,18 @@ namespace oak::math {
 		return a;
 	}
 
+	Vec2 round(const Vec2& v) {
+		return { round(v.x), round(v.y) };
+	}
+
+	Vec3 round(const Vec3& v) {
+		return { round(v.x), round(v.y), round(v.z) };
+	}
+
+	Vec4 round(const Vec4& v) {
+		return { round(v.x), round(v.y), round(v.z), round(v.w) };
+	}
+
 	Vec2 abs(const Vec2& v) {
 		return { abs(v.x), abs(v.y) };
 	}

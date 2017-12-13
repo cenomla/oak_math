@@ -12,6 +12,10 @@ namespace oak::math {
 		return 3.14159265358979f;
 	}
 
+	float round(float v) {
+		return std::roundf(v);
+	}
+
 	float abs(float v) {
 		return std::fabs(v);
 	}
