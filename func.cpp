@@ -16,4 +16,8 @@ namespace oak::math {
 		return std::fabs(v);
 	}
 
+	float log2(float v) {
+		return std::log2f(v);
+	}
+
 }
