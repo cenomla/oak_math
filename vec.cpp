@@ -27,6 +27,10 @@ namespace oak::math {
 	
 	Vec2::Vec2(const Vec4& v) : Vec2{ v.x, v.y } {}
 
+	Vec2::operator Ivec2() const {
+		return { static_cast<int>(x), static_cast<int>(y) };
+	}
+
 	Vec3::Vec3(float a, float b, float c) : x{ a }, y{ b }, z{ c } {}
 
 	Vec3::Vec3(float v) : Vec3{ v, v, v } {}
@@ -34,6 +38,10 @@ namespace oak::math {
 	Vec3::Vec3(const Vec4& v) : Vec3{ v.x, v.y, v.z } {}
 
 	Vec3::Vec3(const Vec2& v, float a) : Vec3{ v.x, v.y, a } {}
+
+	Vec3::operator Ivec3() const {
+		return { static_cast<int>(x), static_cast<int>(y), static_cast<int>(z) };
+	}
 
 	Vec4::Vec4(float a, float b, float c, float d) : x{ a }, y{ b }, z{ c }, w{ d } {}
 
@@ -44,6 +52,10 @@ namespace oak::math {
 	Vec4::Vec4(const Vec3& v, float a) : Vec4{ v.x, v.y, v.z, a } {}
 
 	Vec4::Vec4(const Vec2& a, const Vec2& b) : Vec4{ a.x, a.y, b.x, b.y } {}
+
+	Vec4::operator Ivec4() const {
+		return { static_cast<int>(x), static_cast<int>(y), static_cast<int>(z), static_cast<int>(w) };
+	}
 
 	bool operator==(const Ivec2& a, const Ivec2& b) {
 		return a.x == b.x && a.y == b.y;
@@ -513,6 +525,18 @@ namespace oak::math {
 		return a;
 	}
 
+	Vec2 floor(const Vec2& v) {
+		return { floor(v.x), floor(v.y) };
+	}
+
+	Vec3 floor(const Vec3& v) {
+		return { floor(v.x), floor(v.y), floor(v.z) };
+	}
+
+	Vec4 floor(const Vec4& v) {
+		return { floor(v.x), floor(v.y), floor(v.z), floor(v.w) };
+	}
+
 	Vec2 round(const Vec2& v) {
 		return { round(v.x), round(v.y) };
 	}
@@ -523,6 +547,18 @@ namespace oak::math {
 
 	Vec4 round(const Vec4& v) {
 		return { round(v.x), round(v.y), round(v.z), round(v.w) };
+	}
+
+	Ivec2 abs(const Ivec2& v) {
+		return { abs(v.x), abs(v.y) };
+	}
+
+	Ivec3 abs(const Ivec3& v) {
+		return { abs(v.x), abs(v.y), abs(v.z) };
+	}
+
+	Ivec4 abs(const Ivec4& v) {
+		return { abs(v.x), abs(v.y), abs(v.z), abs(v.w) };
 	}
 
 	Vec2 abs(const Vec2& v) {
