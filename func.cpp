@@ -16,6 +16,10 @@ namespace oak::math {
 		return std::floor(v);
 	}
 
+	float ceil(float v) {
+		return std::ceil(v);
+	}
+
 	float round(float v) {
 		return std::roundf(v);
 	}
@@ -28,8 +32,20 @@ namespace oak::math {
 		return std::fabs(v);
 	}
 
+	float min(float a, float b) {
+		return std::fmin(a, b);
+	}
+
+	float max(float a, float b) {
+		return std::fmax(a, b);
+	}
+
 	float log2(float v) {
 		return std::log2f(v);
+	}
+
+	float atan2(float x, float y) {
+		return std::atan2(x, y);
 	}
 
 }

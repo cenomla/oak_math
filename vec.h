@@ -47,7 +47,7 @@ namespace oak::math {
 		Vec2(const Vec3& v);
 		Vec2(const Vec4& v);
 
-        explicit operator Ivec2() const;
+		explicit operator Ivec2() const;
 
 		float x = 0.0f, y = 0.0f;
 	};
@@ -59,7 +59,7 @@ namespace oak::math {
 		Vec3(const Vec4& v);
 		Vec3(const Vec2& v, float a);
 
-        explicit operator Ivec3() const;
+		explicit operator Ivec3() const;
 
 		float x = 0.0f, y = 0.0f, z = 0.0f;
 	};
@@ -72,7 +72,7 @@ namespace oak::math {
 		Vec4(const Vec3& v, float a);
 		Vec4(const Vec2& a, const Vec2& b);
 
-        explicit operator Ivec4() const;
+		explicit operator Ivec4() const;
 
 		float x = 0.0f, y = 0.0f, z = 0.0f, w = 0.0f;
 	};
