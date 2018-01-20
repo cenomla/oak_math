@@ -1,10 +1,6 @@
 #pragma once
 
-#ifdef __OSIG__
-#define _reflect(x) __attribute__((annotate("reflect:"#x)))
-#else
-#define _reflect(x)
-#endif
+#include "../util/osig_defs.h"
 
 namespace oak::math {
 

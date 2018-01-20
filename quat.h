@@ -1,10 +1,8 @@
 #pragma once
 
-namespace oak::math {
+#include "mat.h"
 
-	struct Vec3;
-	struct Mat3;
-	struct Mat4;
+namespace oak::math {
 
 	struct Quat {
 		Quat() = default;
