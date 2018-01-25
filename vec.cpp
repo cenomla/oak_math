@@ -11,13 +11,26 @@ namespace oak::math {
 
 	Ivec2::Ivec2(int a, int b) : x{ a }, y{ b } {}
 
+	Ivec2::operator Vec2() const {
+		return { static_cast<float>(x), static_cast<float>(y) };
+	}
+
 	Ivec3::Ivec3(int v) : x{ v }, y{ v }, z{ v } {}
 
 	Ivec3::Ivec3(int a, int b, int c) : x{ a }, y{ b }, z{ c } {}
 
+	Ivec3::operator Vec3() const {
+		return { static_cast<float>(x), static_cast<float>(y), static_cast<float>(z) };
+	}
+
 	Ivec4::Ivec4(int v) : x{ v }, y{ v }, z{ v }, w{ v } {}
 
 	Ivec4::Ivec4(int a, int b, int c, int d) : x{ a }, y{ b }, z{ c }, w{ d } {}
+
+	Ivec4::operator Vec4() const {
+		return { static_cast<float>(x), static_cast<float>(y),
+	       		static_cast<float>(z), static_cast<float>(w) };
+	}
 
 	Vec2::Vec2(float a, float b) : x{ a }, y{ b } {}
 

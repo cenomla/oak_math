@@ -18,6 +18,8 @@ namespace oak::math {
 		Ivec2(int a, int b);
 
 		int x = 0, y = 0;
+
+		explicit operator Vec2() const;
 	};
 
 	struct _reflect("math") Ivec3 {
@@ -26,6 +28,8 @@ namespace oak::math {
 		Ivec3(int a, int b, int c);
 
 		int x = 0, y = 0, z = 0;
+
+		explicit operator Vec3() const;
 	};
 
 	struct _reflect("math") Ivec4 {
@@ -34,6 +38,8 @@ namespace oak::math {
 		Ivec4(int a, int b, int c, int d);
 
 		int x = 0, y = 0, z = 0, w = 0;
+
+		explicit operator Vec4() const;
 	};
 
 	struct _reflect("math") Vec2 {
