@@ -6,6 +6,10 @@
 #include "quat.h"
 
 namespace oak {
+	
+	namespace catagory {
+		struct math;
+	}
 
 	using Ivec2 = math::Ivec2;
 	using Ivec3 = math::Ivec3;

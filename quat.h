@@ -4,7 +4,7 @@
 
 namespace oak::math {
 
-	struct Quat {
+	struct _reflect(oak::catagory::math) Quat {
 		Quat() = default;
 		Quat(float v);
 		Quat(float a, float b, float c, float d);

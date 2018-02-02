@@ -8,7 +8,7 @@ namespace oak::math {
 	struct Mat3;
 	struct Mat4;
 
-	struct _reflect("math") Mat2 {
+	struct _reflect(oak::catagory::math) Mat2 {
 		typedef Vec2 column_type;
 
 		Mat2() = default;
@@ -23,7 +23,7 @@ namespace oak::math {
 		column_type value[2];
 	};
 
-	struct _reflect("math") Mat3 {
+	struct _reflect(oak::catagory::math) Mat3 {
 		typedef Vec3 column_type;
 
 		Mat3() = default;
@@ -39,7 +39,7 @@ namespace oak::math {
 		column_type value[3];
 	};
 
-	struct _reflect("math") Mat4 {
+	struct _reflect(oak::catagory::math) Mat4 {
 		typedef Vec4 column_type;
 
 		Mat4() = default;

@@ -2,6 +2,10 @@
 
 #include "../util/osig_defs.h"
 
+namespace oak::catagory {
+	struct math {};
+}
+
 namespace oak::math {
 
 	struct Vec2;
@@ -12,7 +16,7 @@ namespace oak::math {
 	struct Mat3;
 	struct Mat4;
 
-	struct _reflect("math") Ivec2 {
+	struct _reflect(oak::catagory::math) Ivec2 {
 		Ivec2() = default;
 		Ivec2(int v);
 		Ivec2(int a, int b);
@@ -22,7 +26,7 @@ namespace oak::math {
 		explicit operator Vec2() const;
 	};
 
-	struct _reflect("math") Ivec3 {
+	struct _reflect(oak::catagory::math) Ivec3 {
 		Ivec3() = default;
 		Ivec3(int v);
 		Ivec3(int a, int b, int c);
@@ -32,7 +36,7 @@ namespace oak::math {
 		explicit operator Vec3() const;
 	};
 
-	struct _reflect("math") Ivec4 {
+	struct _reflect(oak::catagory::math) Ivec4 {
 		Ivec4() = default;
 		Ivec4(int v);
 		Ivec4(int a, int b, int c, int d);
@@ -42,7 +46,7 @@ namespace oak::math {
 		explicit operator Vec4() const;
 	};
 
-	struct _reflect("math") Vec2 {
+	struct _reflect(oak::catagory::math) Vec2 {
 		Vec2() = default;
 		Vec2(float a, float b);
 		Vec2(float v);
@@ -54,7 +58,7 @@ namespace oak::math {
 		float x = 0.0f, y = 0.0f;
 	};
 
-	struct _reflect("math") Vec3 {
+	struct _reflect(oak::catagory::math) Vec3 {
 		Vec3() = default;
 		Vec3(float a, float b, float c);
 		Vec3(float v);
@@ -66,7 +70,7 @@ namespace oak::math {
 		float x = 0.0f, y = 0.0f, z = 0.0f;
 	};
 
-	struct _reflect("math") Vec4 {
+	struct _reflect(oak::catagory::math) Vec4 {
 		Vec4() = default;
 		Vec4(float a, float b, float c, float d);
 		Vec4(float v);
