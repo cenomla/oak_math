@@ -622,6 +622,10 @@ namespace oak::math {
 		};
 	}
 
+	float cross(const Vec2& a, const Vec2& b) {
+		return a.x * b.y - a.y * b.x;
+	}
+
 	Vec3 cross(const Vec3& a, const Vec3& b) {
 		return Vec3{
 			a.y * b.z - a.z * b.y,
