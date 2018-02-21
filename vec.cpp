@@ -586,6 +586,54 @@ namespace oak::math {
 		return { abs(v.x), abs(v.y), abs(v.z), abs(v.w) };
 	}
 
+	Ivec2 min(const Ivec2& a, const Ivec2& b) {
+		return { math::min(a.x, b.x), math::min(a.y, b.y) };
+	}
+
+	Ivec3 min(const Ivec3& a, const Ivec3& b) {
+		return { math::min(a.x, b.x), math::min(a.y, b.y), math::min(a.z, b.z) };
+	}
+
+	Ivec4 min(const Ivec4& a, const Ivec4& b) {
+		return { math::min(a.x, b.x), math::min(a.y, b.y), math::min(a.z, b.z), math::min(a.w, b.w) };
+	}
+
+	Vec2 min(const Vec2& a, const Vec2& b) {
+		return { math::min(a.x, b.x), math::min(a.y, b.y) };
+	}
+
+	Vec3 min(const Vec3& a, const Vec3& b) {
+		return { math::min(a.x, b.x), math::min(a.y, b.y), math::min(a.z, b.z) };
+	}
+
+	Vec4 min(const Vec4& a, const Vec4& b) {
+		return { math::min(a.x, b.x), math::min(a.y, b.y), math::min(a.z, b.z), math::min(a.w, b.w) };
+	}
+
+	Ivec2 max(const Ivec2& a, const Ivec2& b) {
+		return { math::max(a.x, b.x), math::max(a.y, b.y) };
+	}
+
+	Ivec3 max(const Ivec3& a, const Ivec3& b) {
+		return { math::max(a.x, b.x), math::max(a.y, b.y), math::max(a.z, b.z) };
+	}
+
+	Ivec4 max(const Ivec4& a, const Ivec4& b) {
+		return { math::max(a.x, b.x), math::max(a.y, b.y), math::max(a.z, b.z), math::max(a.w, b.w) };
+	}
+
+	Vec2 max(const Vec2& a, const Vec2& b) {
+		return { math::max(a.x, b.x), math::max(a.y, b.y) };
+	}
+
+	Vec3 max(const Vec3& a, const Vec3& b) {
+		return { math::max(a.x, b.x), math::max(a.y, b.y), math::max(a.z, b.z) };
+	}
+
+	Vec4 max(const Vec4& a, const Vec4& b) {
+		return { math::max(a.x, b.x), math::max(a.y, b.y), math::max(a.z, b.z), math::max(a.w, b.w) };
+	}
+
 	float dot(const Vec2& a, const Vec2& b) {
 		return (a.x * b.x) + (a.y * b.y);
 	}

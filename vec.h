@@ -203,6 +203,20 @@ namespace oak::math {
 	Vec3 abs(const Vec3& v);
 	Vec4 abs(const Vec4& v);
 
+	Ivec2 min(const Ivec2& a, const Ivec2& b);
+	Ivec3 min(const Ivec3& a, const Ivec3& b);
+	Ivec4 min(const Ivec4& a, const Ivec4& b);
+	Vec2 min(const Vec2& a, const Vec2& b);
+	Vec3 min(const Vec3& a, const Vec3& b);
+	Vec4 min(const Vec4& a, const Vec4& b);
+
+	Ivec2 max(const Ivec2& a, const Ivec2& b);
+	Ivec3 max(const Ivec3& a, const Ivec3& b);
+	Ivec4 max(const Ivec4& a, const Ivec4& b);
+	Vec2 max(const Vec2& a, const Vec2& b);
+	Vec3 max(const Vec3& a, const Vec3& b);
+	Vec4 max(const Vec4& a, const Vec4& b);
+
 	float dot(const Vec2& a, const Vec2& b);
 	float dot(const Vec3& a, const Vec3& b);
 	float dot(const Vec4& a, const Vec4& b);

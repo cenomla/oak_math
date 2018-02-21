@@ -32,6 +32,14 @@ namespace oak::math {
 		return std::fabs(v);
 	}
 
+	int min(int a, int b) {
+		return std::min(a, b);
+	}
+
+	int max(int a, int b) {
+		return std::max(a, b);
+	}
+
 	float min(float a, float b) {
 		return std::fmin(a, b);
 	}
