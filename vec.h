@@ -196,6 +196,10 @@ namespace oak::math {
 	Vec3 round(const Vec3& v);
 	Vec4 round(const Vec4& v);
 
+	Vec2 ceil(const Vec2& v);
+	Vec3 ceil(const Vec3& v);
+	Vec4 ceil(const Vec4& v);
+
 	Ivec2 abs(const Ivec2& v);
 	Ivec3 abs(const Ivec3& v);
 	Ivec4 abs(const Ivec4& v);

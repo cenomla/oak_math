@@ -562,6 +562,18 @@ namespace oak::math {
 		return { round(v.x), round(v.y), round(v.z), round(v.w) };
 	}
 
+	Vec2 ceil(const Vec2& v) {
+		return { ceil(v.x), ceil(v.y) };
+	}
+
+	Vec3 ceil(const Vec3& v) {
+		return { ceil(v.x), ceil(v.y), ceil(v.z) };
+	}
+
+	Vec4 ceil(const Vec4& v) {
+		return { ceil(v.x), ceil(v.y), ceil(v.z), ceil(v.w) };
+	}
+
 	Ivec2 abs(const Ivec2& v) {
 		return { abs(v.x), abs(v.y) };
 	}
