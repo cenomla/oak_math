@@ -230,6 +230,8 @@ namespace oak::math {
 	Mat4 outerProduct(const Vec4& a, const Vec4& b);
 
 	float cross(const Vec2& a, const Vec2& b);
+	Vec2 cross(float s, const Vec2& a);
+	Vec2 cross(const Vec2& a, float s);
 	Vec3 cross(const Vec3& a, const Vec3& b);
 
 	Vec2 vectorTriple(const Vec2& a, const Vec2& b, const Vec2& c);

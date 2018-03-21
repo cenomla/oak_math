@@ -686,6 +686,14 @@ namespace oak::math {
 		return a.x * b.y - a.y * b.x;
 	}
 
+	Vec2 cross(float s, const Vec2& a) {
+		return { -s * a.y, s * a.x };
+	}
+
+	Vec2 cross(const Vec2& a, float s) {
+		return { s * a.y, -s * a.x };
+	}
+
 	Vec3 cross(const Vec3& a, const Vec3& b) {
 		return Vec3{
 			a.y * b.z - a.z * b.y,
