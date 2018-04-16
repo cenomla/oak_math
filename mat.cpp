@@ -6,8 +6,8 @@
 
 namespace oak::math {
 
-	Mat2::Mat2(float v) : 
-		value{ column_type{ v, 0.0f }, column_type{ 0.0f, v } } {}	
+	Mat2::Mat2(float v) :
+		value{ column_type{ v, 0.0f }, column_type{ 0.0f, v } } {}
 
 	Mat2::Mat2(const column_type& a, const column_type& b) :
 		value{ a, b } {}
@@ -19,7 +19,7 @@ namespace oak::math {
 		value{ column_type{ v.value[0] }, column_type{ v.value[1] } } {}
 
 	Mat3::Mat3(float v) :
-		value{ column_type{ v, 0.0f, 0.0f }, column_type{ 0.0f, v, 0.0f }, column_type{ 0.0f, 0.0f, v } } {} 
+		value{ column_type{ v, 0.0f, 0.0f }, column_type{ 0.0f, v, 0.0f }, column_type{ 0.0f, 0.0f, v } } {}
 
 	Mat3::Mat3(const column_type& a, const column_type& b, const column_type& c) :
 		value{ a, b, c } {}
@@ -29,7 +29,7 @@ namespace oak::math {
 	Mat3::Mat3(const Mat4& v) :
 		value{ column_type{ v.value[0] }, column_type{ v.value[1] }, column_type{ v.value[2] } } {}
 
-	Mat4::Mat4(float v) : 
+	Mat4::Mat4(float v) :
 		value { column_type{ v, 0.0f, 0.0f, 0.0f }, column_type{ 0.0f, v, 0.0f, 0.0f }, column_type{ 0.0f, 0.0f, v, 0.0f }, column_type{ 0.0f, 0.0f, 0.0f, v } } {}
 
 	Mat4::Mat4(const column_type& a, const column_type& b, const column_type& c, const column_type& d) :
@@ -54,9 +54,9 @@ namespace oak::math {
 	}
 
 	Mat2 operator*(const Mat2& a, const Mat2& b) {
-		return Mat2{ 
+		return Mat2{
 			Mat2::column_type{ a.value[0] * b.value[0].x + a.value[1] * b.value[0].y },
-	       		Mat2::column_type{ a.value[0] * b.value[1].x + a.value[1] * b.value[1].y } 
+	       		Mat2::column_type{ a.value[0] * b.value[1].x + a.value[1] * b.value[1].y }
 		};
 	}
 
@@ -94,17 +94,17 @@ namespace oak::math {
 	}
 
 	float det(const Mat3& src) {
-		return 
+		return
 			src.value[0].x * src.value[1].y * src.value[2].z +
 			src.value[1].x * src.value[2].y * src.value[0].z +
 			src.value[2].x * src.value[0].y * src.value[1].z -
-			src.value[2].x * src.value[1].y * src.value[0].z - 
-			src.value[1].x * src.value[0].y * src.value[2].z - 
+			src.value[2].x * src.value[1].y * src.value[0].z -
+			src.value[1].x * src.value[0].y * src.value[2].z -
 			src.value[0].x * src.value[2].y * src.value[1].z;
 	}
 
 	float det(const Mat4& src) {
-		return 
+		return
 			src.value[0].x * (
 				src.value[1].y * src.value[2].z * src.value[3].w +
 				src.value[2].y * src.value[3].z * src.value[1].w +
@@ -137,9 +137,9 @@ namespace oak::math {
 	}
 
 	Mat2 transpose(const Mat2& src) {
-		return Mat2{ 
-			Mat2::column_type{ src.value[0].x, src.value[1].x }, 
-			Mat2::column_type{ src.value[0].y, src.value[1].y } 
+		return Mat2{
+			Mat2::column_type{ src.value[0].x, src.value[1].x },
+			Mat2::column_type{ src.value[0].y, src.value[1].y }
 		};
 	}
 
@@ -160,8 +160,8 @@ namespace oak::math {
 		};
 	}
 
-	Mat2 inverse(const Mat2& src) { 
-		float ood = 1.0f / det(src);		
+	Mat2 inverse(const Mat2& src) {
+		float ood = 1.0f / det(src);
 
 		return Mat2{
 			Mat2::column_type{ src.value[1].y * ood, -src.value[0].y * ood },
@@ -173,7 +173,7 @@ namespace oak::math {
 		float ood = 1.0f / det(src);
 
 		return Mat3{
-			Mat3::column_type{ 
+			Mat3::column_type{
 			(src.value[1].y * src.value[2].z - src.value[2].y * src.value[1].z) * ood,
 			- (src.value[1].x * src.value[2].z - src.value[2].x * src.value[1].z) * ood,
 			(src.value[1].x * src.value[2].y - src.value[2].x * src.value[1].y) * ood },
@@ -195,10 +195,10 @@ namespace oak::math {
 		float c02 = src.value[1].z * src.value[3].w - src.value[3].z * src.value[1].w;
 		float c03 = src.value[1].z * src.value[2].w - src.value[2].z * src.value[1].w;
 
-		float c04 = src.value[2].y * src.value[3].w - src.value[3].y * src.value[2].w;	
+		float c04 = src.value[2].y * src.value[3].w - src.value[3].y * src.value[2].w;
 		float c06 = src.value[1].y * src.value[3].w - src.value[3].y * src.value[1].w;
 		float c07 = src.value[1].y * src.value[2].w - src.value[2].y * src.value[1].w;
-		
+
 		float c08 = src.value[2].y * src.value[3].z - src.value[3].y * src.value[2].z;
 		float c10 = src.value[1].y * src.value[3].z - src.value[3].y * src.value[1].z;
 		float c11 = src.value[1].y * src.value[2].z - src.value[2].y * src.value[1].z;
@@ -246,7 +246,7 @@ namespace oak::math {
 			Mat4::column_type{ 0.0f, 1.0f / tfovh, 0.0f, 0.0f },
 			Mat4::column_type{ 0.0f, 0.0f, far / (near - far), -1.0f },
 			Mat4::column_type{ 0.0f, 0.0f, -(far * near) / fsn, 0.0f }
-		};	
+		};
 	}
 
 	Mat4 lookAt(const Vec3& eye, const Vec3& center, const Vec3& up) {
@@ -254,7 +254,7 @@ namespace oak::math {
 		Vec3 s{ normalize(cross(f, up)) };
 		Vec3 u{ cross(s, f) };
 
-		return Mat4 { 
+		return Mat4 {
 			Mat4::column_type{ s.x, u.x, -f.x, 0.0f },
 			Mat4::column_type{ s.y, u.y, -f.y, 0.0f },
 			Mat4::column_type{ s.z, u.z, -f.z, 0.0f },
@@ -282,7 +282,7 @@ namespace oak::math {
 		Mat3 result;
 		result.value[0] = src.value[0] * c + src.value[1] * s;
 		result.value[1] = src.value[0] * -s + src.value[1] * c;
-		result.value[2] = src.value[2];		
+		result.value[2] = src.value[2];
 
 		return result;
 	}
@@ -322,7 +322,7 @@ namespace oak::math {
 		result.value[3] = src.value[3];
 
 		return result;
-	}	
+	}
 
 	Mat3 make_mat3(const Vec2& pos, float r, float s) {
 		return translate(Mat3{ 1.0f }, pos) * scale(Mat3{ 1.0f }, { s }) * rotate(Mat3{ 1.0f }, r);
@@ -333,3 +333,4 @@ namespace oak::math {
 	}
 
 }
+

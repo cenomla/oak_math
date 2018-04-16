@@ -18,3 +18,4 @@ namespace oak::math {
 	Mat3 toMat3(const Quat& q);
 	Mat4 toMat4(const Quat& q);
 }
+

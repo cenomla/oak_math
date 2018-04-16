@@ -14,7 +14,7 @@ namespace oak::math {
 		Mat2() = default;
 		Mat2(float v);
 		Mat2(
-			const column_type& a, 
+			const column_type& a,
 			const column_type& b
 		);
 		Mat2(const Mat3& v);
@@ -29,8 +29,8 @@ namespace oak::math {
 		Mat3() = default;
 		Mat3(float v);
 		Mat3(
-			const column_type& a, 
-			const column_type& b, 
+			const column_type& a,
+			const column_type& b,
 			const column_type& c
 		);
 		Mat3(const Mat2& v);
@@ -45,9 +45,9 @@ namespace oak::math {
 		Mat4() = default;
 		Mat4(float v);
 		Mat4(
-			const column_type& a, 
-			const column_type& b, 
-			const column_type& c, 
+			const column_type& a,
+			const column_type& b,
+			const column_type& c,
 			const column_type& d
 		);
 		Mat4(const Mat2& v);
@@ -97,3 +97,4 @@ namespace oak::math {
 	Mat3 make_mat3(const Vec2& pos, float rotation, const Vec2& scale);
 
 }
+

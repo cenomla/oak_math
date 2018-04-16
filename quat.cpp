@@ -13,7 +13,7 @@ namespace oak::math {
 
 	Quat::Quat(const Vec3& v) {
 		Vec3 c{ cosf(v.x * 0.5f), cosf(v.y * 0.5f), cosf(v.z * 0.5f) };
-		Vec3 s{ sinf(v.x * 0.5f), sinf(v.y * 0.5f), sinf(v.z * 0.5f) };	
+		Vec3 s{ sinf(v.x * 0.5f), sinf(v.y * 0.5f), sinf(v.z * 0.5f) };
 
 		x = s.x * c.y * c.z - c.x * s.y * s.z;
 		y = c.x * s.y * c.z + s.x * c.y * s.z;
@@ -48,7 +48,7 @@ namespace oak::math {
 	}
 
 	Mat4 toMat4(const Quat& q) {
-		return Mat4{ toMat3(q) };	
+		return Mat4{ toMat3(q) };
 	}
 
 }

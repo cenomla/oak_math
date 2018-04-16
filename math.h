@@ -6,7 +6,7 @@
 #include "quat.h"
 
 namespace oak {
-	
+
 	namespace catagory {
 		struct math;
 	}
@@ -25,3 +25,4 @@ namespace oak {
 
 	using Quat = math::Quat;
 }
+

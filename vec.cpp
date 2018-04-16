@@ -37,7 +37,7 @@ namespace oak::math {
 	Vec2::Vec2(float v) : Vec2{ v, v } {}
 
 	Vec2::Vec2(const Vec3& v) : Vec2{ v.x, v.y } {}
-	
+
 	Vec2::Vec2(const Vec4& v) : Vec2{ v.x, v.y } {}
 
 	Vec2::operator Ivec2() const {
@@ -61,7 +61,7 @@ namespace oak::math {
 	Vec4::Vec4(float v) : Vec4{ v, v, v, v } {}
 
 	Vec4::Vec4(const Vec2& v, float a, float b) : Vec4{ v.x, v.y, a, b } {}
-	
+
 	Vec4::Vec4(const Vec3& v, float a) : Vec4{ v.x, v.y, v.z, a } {}
 
 	Vec4::Vec4(const Vec2& a, const Vec2& b) : Vec4{ a.x, a.y, b.x, b.y } {}
@@ -225,7 +225,7 @@ namespace oak::math {
 	Ivec4 operator*(const Ivec4& a, const Ivec4& b) {
 		return Ivec4{ a.x * b.x, a.y * b.y, a.z * b.z, a.w * b.w };
 	}
-	
+
 	Vec2 operator*(const Vec2& a, const Vec2& b) {
 		return Vec2{ a.x * b.x, a.y * b.y };
 	}
@@ -237,7 +237,7 @@ namespace oak::math {
 	Vec4 operator*(const Vec4& a, const Vec4& b) {
 		return Vec4{ a.x * b.x, a.y * b.y, a.z * b.z, a.w * b.w };
 	}
-	
+
 	Ivec2 operator/(const Ivec2& a, int b) {
 		return Ivec2{ a.x / b, a.y / b };
 	}
@@ -453,7 +453,7 @@ namespace oak::math {
 		a.w *= b.w;
 		return a;
 	}
-	
+
 	Ivec2& operator/=(Ivec2& a, int b) {
 		a.x /= b;
 		a.y /= b;
@@ -501,7 +501,7 @@ namespace oak::math {
 		a.y /= b.y;
 		return a;
 	}
-	
+
 	Ivec3& operator/=(Ivec3& a, const Ivec3& b) {
 		a.x /= b.x;
 		a.y /= b.y;
@@ -712,7 +712,7 @@ namespace oak::math {
 
 	float scalarTriple(const Vec3& a, const Vec3& b, const Vec3& c) {
 		return dot(cross(a, b), c);
-	}	
+	}
 
 	float length(const Vec2& v) {
 		return std::sqrt(v.x * v.x + v.y * v.y);
@@ -742,3 +742,4 @@ namespace oak::math {
 	}
 
 }
+

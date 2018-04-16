@@ -131,7 +131,7 @@ namespace oak::math {
 	Vec2 operator*(const Vec2& a, const Vec2& b);
 	Vec3 operator*(const Vec3& a, const Vec3& b);
 	Vec4 operator*(const Vec4& a, const Vec4& b);
-	
+
 	Ivec2 operator/(const Ivec2& a, int b);
 	Ivec3 operator/(const Ivec3& a, int b);
 	Ivec4 operator/(const Ivec4& a, int b);
@@ -173,7 +173,7 @@ namespace oak::math {
 	Vec2& operator*=(Vec2& a, const Vec2& b);
 	Vec3& operator*=(Vec3& a, const Vec3& b);
 	Vec4& operator*=(Vec4& a, const Vec4& b);
-	
+
 	Ivec2& operator/=(Ivec2& a, int b);
 	Ivec3& operator/=(Ivec3& a, int b);
 	Ivec4& operator/=(Ivec4& a, int b);
@@ -248,3 +248,4 @@ namespace oak::math {
 	Vec4 normalize(const Vec4& v);
 
 }
+
