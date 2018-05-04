@@ -52,6 +52,18 @@ namespace oak::math {
 		return std::log2f(v);
 	}
 
+	float sin(float a) {
+		return std::sin(a);
+	}
+
+	float cos(float a) {
+		return std::cos(a);
+	}
+
+	float tan(float a) {
+		return std::tan(a);
+	}
+
 	float atan2(float x, float y) {
 		return std::atan2(x, y);
 	}

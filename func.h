@@ -14,6 +14,9 @@ namespace oak::math {
 	float min(float a, float b);
 	float max(float a, float b);
 	float log2(float v);
+	float sin(float a);
+	float cos(float a);
+	float tan(float a);
 	float atan2(float x, float y);
 
 }

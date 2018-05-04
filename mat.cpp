@@ -1,7 +1,6 @@
 #include "mat.h"
 
-#include <cmath>
-
+#include "func.h"
 #include "vec.h"
 
 namespace oak::math {

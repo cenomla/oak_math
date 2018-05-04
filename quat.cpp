@@ -1,7 +1,6 @@
 #include "quat.h"
 
-#include <cmath>
-
+#include "func.h"
 #include "vec.h"
 #include "mat.h"
 
@@ -12,8 +11,8 @@ namespace oak::math {
 	Quat::Quat(float a, float b, float c, float d) : x{ a }, y{ b }, z{ c }, w{ d } {}
 
 	Quat::Quat(const Vec3& v) {
-		Vec3 c{ cosf(v.x * 0.5f), cosf(v.y * 0.5f), cosf(v.z * 0.5f) };
-		Vec3 s{ sinf(v.x * 0.5f), sinf(v.y * 0.5f), sinf(v.z * 0.5f) };
+		Vec3 c{ cos(v.x * 0.5f), cos(v.y * 0.5f), cos(v.z * 0.5f) };
+		Vec3 s{ sin(v.x * 0.5f), sin(v.y * 0.5f), sin(v.z * 0.5f) };
 
 		x = s.x * c.y * c.z - c.x * s.y * s.z;
 		y = c.x * s.y * c.z + s.x * c.y * s.z;
