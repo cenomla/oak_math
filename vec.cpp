@@ -29,7 +29,7 @@ namespace oak::math {
 
 	Ivec4::operator Vec4() const {
 		return { static_cast<float>(x), static_cast<float>(y),
-	       		static_cast<float>(z), static_cast<float>(w) };
+			static_cast<float>(z), static_cast<float>(w) };
 	}
 
 	Vec2::Vec2(float a, float b) : x{ a }, y{ b } {}
@@ -211,6 +211,18 @@ namespace oak::math {
 	}
 
 	Vec4 operator*(const Vec4& a, float b) {
+		return Vec4{ a.x * b, a.y * b, a.z * b, a.w * b };
+	}
+
+	Vec2 operator*(float b, const Vec2& a) {
+		return Vec2{ a.x * b, a.y * b };
+	}
+
+	Vec3 operator*(float b, const Vec3& a) {
+		return Vec3{ a.x * b, a.y * b, a.z * b };
+	}
+
+	Vec4 operator*(float b, const Vec4& a) {
 		return Vec4{ a.x * b, a.y * b, a.z * b, a.w * b };
 	}
 

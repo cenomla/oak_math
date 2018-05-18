@@ -124,6 +124,9 @@ namespace oak::math {
 	Vec2 operator*(const Vec2& a, float b);
 	Vec3 operator*(const Vec3& a, float b);
 	Vec4 operator*(const Vec4& a, float b);
+	Vec2 operator*(float b, const Vec2& a);
+	Vec3 operator*(float b, const Vec3& a);
+	Vec4 operator*(float b, const Vec4& a);
 
 	Ivec2 operator*(const Ivec2& a, const Ivec2& b);
 	Ivec3 operator*(const Ivec3& a, const Ivec3& b);
