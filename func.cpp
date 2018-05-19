@@ -48,6 +48,10 @@ namespace oak::math {
 		return std::fmax(a, b);
 	}
 
+	float clamp(float a, float b, float c) {
+		return std::fmax(a, std::fmin(b, c));
+	}
+
 	float log2(float v) {
 		return std::log2f(v);
 	}

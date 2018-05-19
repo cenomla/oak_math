@@ -13,6 +13,7 @@ namespace oak::math {
 	int max(int a, int b);
 	float min(float a, float b);
 	float max(float a, float b);
+	float clamp(float a, float b, float c);
 	float log2(float v);
 	float sin(float a);
 	float cos(float a);
