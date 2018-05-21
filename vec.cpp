@@ -751,5 +751,11 @@ namespace oak::math {
 		return l == 0.0f ? v : v / length(v);
 	}
 
+	Vec2 rotate(const Vec2 v, const float angle) {
+		const auto ct = cos(angle);
+		const auto st = sin(angle);
+		return { v.x * ct - v.y * st, v.x * st + v.y * ct };
+	}
+
 }
 

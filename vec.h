@@ -250,5 +250,7 @@ namespace oak::math {
 	Vec3 normalize(const Vec3& v);
 	Vec4 normalize(const Vec4& v);
 
+	Vec2 rotate(const Vec2 v, const float angle);
+
 }
 
