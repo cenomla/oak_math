@@ -72,5 +72,9 @@ namespace oak::math {
 		return std::atan2(x, y);
 	}
 
+	float sqrt(float x) {
+		return std::sqrt(x);
+	}
+
 }
 

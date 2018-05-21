@@ -19,6 +19,7 @@ namespace oak::math {
 	float cos(float a);
 	float tan(float a);
 	float atan2(float x, float y);
+	float sqrt(float x);
 
 }
 

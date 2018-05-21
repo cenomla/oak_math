@@ -1,7 +1,5 @@
 #include "vec.h"
 
-#include <cmath>
-
 #include "func.h"
 #include "mat.h"
 
@@ -727,15 +725,15 @@ namespace oak::math {
 	}
 
 	float length(const Vec2& v) {
-		return std::sqrt(v.x * v.x + v.y * v.y);
+		return sqrt(v.x * v.x + v.y * v.y);
 	}
 
 	float length(const Vec3& v) {
-		return std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+		return sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 	}
 
 	float length(const Vec4& v) {
-		return std::sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
+		return sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
 	}
 
 	Vec2 normalize(const Vec2& v) {
