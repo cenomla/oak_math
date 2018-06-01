@@ -76,5 +76,18 @@ namespace oak::math {
 		return std::sqrt(x);
 	}
 
+	float fast_inv_sqrt(float x) {
+		float xhalf = 0.5f * x;
+		int v;
+		for (int i = 0; i < 4; i++) {
+			((char*)&v)[i] = ((char*)&x)[i];
+		}
+		v = 0x5f3759df - (v >> 1);
+		for (int i = 0; i < 4; i++) {
+			((char*)&x)[i] = ((char*)&v)[i];
+		}
+		return x * (1.5f - xhalf * x * x);
+	}
+
 }
 

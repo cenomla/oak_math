@@ -20,6 +20,7 @@ namespace oak::math {
 	float tan(float a);
 	float atan2(float x, float y);
 	float sqrt(float x);
+	float fast_inv_sqrt(float x);
 
 }
 
