@@ -3,7 +3,7 @@
 #include "func.h"
 #include "mat.h"
 
-namespace oak::math {
+namespace oak {
 
 	Ivec2::Ivec2(int v) : x{ v }, y{ v } {}
 
@@ -609,51 +609,51 @@ namespace oak::math {
 	}
 
 	Ivec2 min(const Ivec2& a, const Ivec2& b) {
-		return { math::min(a.x, b.x), math::min(a.y, b.y) };
+		return { min(a.x, b.x), min(a.y, b.y) };
 	}
 
 	Ivec3 min(const Ivec3& a, const Ivec3& b) {
-		return { math::min(a.x, b.x), math::min(a.y, b.y), math::min(a.z, b.z) };
+		return { min(a.x, b.x), min(a.y, b.y), min(a.z, b.z) };
 	}
 
 	Ivec4 min(const Ivec4& a, const Ivec4& b) {
-		return { math::min(a.x, b.x), math::min(a.y, b.y), math::min(a.z, b.z), math::min(a.w, b.w) };
+		return { min(a.x, b.x), min(a.y, b.y), min(a.z, b.z), min(a.w, b.w) };
 	}
 
 	Vec2 min(const Vec2& a, const Vec2& b) {
-		return { math::min(a.x, b.x), math::min(a.y, b.y) };
+		return { min(a.x, b.x), min(a.y, b.y) };
 	}
 
 	Vec3 min(const Vec3& a, const Vec3& b) {
-		return { math::min(a.x, b.x), math::min(a.y, b.y), math::min(a.z, b.z) };
+		return { min(a.x, b.x), min(a.y, b.y), min(a.z, b.z) };
 	}
 
 	Vec4 min(const Vec4& a, const Vec4& b) {
-		return { math::min(a.x, b.x), math::min(a.y, b.y), math::min(a.z, b.z), math::min(a.w, b.w) };
+		return { min(a.x, b.x), min(a.y, b.y), min(a.z, b.z), min(a.w, b.w) };
 	}
 
 	Ivec2 max(const Ivec2& a, const Ivec2& b) {
-		return { math::max(a.x, b.x), math::max(a.y, b.y) };
+		return { max(a.x, b.x), max(a.y, b.y) };
 	}
 
 	Ivec3 max(const Ivec3& a, const Ivec3& b) {
-		return { math::max(a.x, b.x), math::max(a.y, b.y), math::max(a.z, b.z) };
+		return { max(a.x, b.x), max(a.y, b.y), max(a.z, b.z) };
 	}
 
 	Ivec4 max(const Ivec4& a, const Ivec4& b) {
-		return { math::max(a.x, b.x), math::max(a.y, b.y), math::max(a.z, b.z), math::max(a.w, b.w) };
+		return { max(a.x, b.x), max(a.y, b.y), max(a.z, b.z), max(a.w, b.w) };
 	}
 
 	Vec2 max(const Vec2& a, const Vec2& b) {
-		return { math::max(a.x, b.x), math::max(a.y, b.y) };
+		return { max(a.x, b.x), max(a.y, b.y) };
 	}
 
 	Vec3 max(const Vec3& a, const Vec3& b) {
-		return { math::max(a.x, b.x), math::max(a.y, b.y), math::max(a.z, b.z) };
+		return { max(a.x, b.x), max(a.y, b.y), max(a.z, b.z) };
 	}
 
 	Vec4 max(const Vec4& a, const Vec4& b) {
-		return { math::max(a.x, b.x), math::max(a.y, b.y), math::max(a.z, b.z), math::max(a.w, b.w) };
+		return { max(a.x, b.x), max(a.y, b.y), max(a.z, b.z), max(a.w, b.w) };
 	}
 
 	float dot(const Vec2& a, const Vec2& b) {

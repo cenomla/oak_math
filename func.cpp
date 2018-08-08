@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-namespace oak::math {
+namespace oak {
 
 	float radians(float deg) {
 		return deg / 180.0f * pi();

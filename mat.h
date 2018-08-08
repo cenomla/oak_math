@@ -2,7 +2,7 @@
 
 #include "vec.h"
 
-namespace oak::math {
+namespace oak {
 
 	struct Mat2;
 	struct Mat3;

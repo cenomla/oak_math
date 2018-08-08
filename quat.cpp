@@ -4,7 +4,7 @@
 #include "vec.h"
 #include "mat.h"
 
-namespace oak::math {
+namespace oak {
 
 	Quat::Quat(float v) : x{ v }, y{ v }, z{ v }, w{ v } {}
 

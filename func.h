@@ -1,6 +1,6 @@
 #pragma once
 
-namespace oak::math {
+namespace oak {
 
 	float radians(float deg);
 	float pi();

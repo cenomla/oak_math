@@ -3,7 +3,7 @@
 #include "func.h"
 #include "vec.h"
 
-namespace oak::math {
+namespace oak {
 
 	Mat2::Mat2(float v) :
 		value{ column_type{ v, 0.0f }, column_type{ 0.0f, v } } {}

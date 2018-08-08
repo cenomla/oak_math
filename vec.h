@@ -6,7 +6,7 @@ namespace oak::catagory {
 	struct math {};
 }
 
-namespace oak::math {
+namespace oak {
 
 	struct Vec2;
 	struct Vec3;

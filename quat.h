@@ -2,7 +2,7 @@
 
 #include "mat.h"
 
-namespace oak::math {
+namespace oak {
 
 	struct _reflect(oak::catagory::math) Quat {
 		Quat() = default;
