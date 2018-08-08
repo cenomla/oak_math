@@ -757,5 +757,13 @@ namespace oak::math {
 		return { v.x * ct - v.y * st, v.x * st + v.y * ct };
 	}
 
+	Vec2 left(const Vec2 v) {
+		return { v.y, -v.x };
+	}
+
+	Vec2 right(const Vec2 v) {
+		return { -v.y, v.x };
+	}
+
 }
 

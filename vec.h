@@ -252,5 +252,8 @@ namespace oak::math {
 
 	Vec2 rotate(const Vec2 v, const float angle);
 
+	Vec2 left(const Vec2 v);
+	Vec2 right(const Vec2 v);
+
 }
 
