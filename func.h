@@ -9,11 +9,24 @@ namespace oak {
 	float round(float v);
 	int abs(int v);
 	float abs(float v);
-	int min(int a, int b);
-	int max(int a, int b);
-	float min(float a, float b);
-	float max(float a, float b);
-	float clamp(float a, float b, float c);
+
+	template<typename T>
+	T min(T a, T b) {
+		if (a < b) { return a; }
+		return b;
+	}
+
+	template<typename T>
+	T max(T a, T b) {
+		if (a > b) { return a; }
+		return b;
+	}
+
+	template<typename T>
+	T clamp(T a, T b, T c) {
+		return max(a, min(b, c));
+	}
+
 	float log2(float v);
 	float sin(float a);
 	float cos(float a);

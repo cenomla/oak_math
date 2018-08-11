@@ -32,26 +32,6 @@ namespace oak {
 		return std::fabs(v);
 	}
 
-	int min(int a, int b) {
-		return std::min(a, b);
-	}
-
-	int max(int a, int b) {
-		return std::max(a, b);
-	}
-
-	float min(float a, float b) {
-		return std::fmin(a, b);
-	}
-
-	float max(float a, float b) {
-		return std::fmax(a, b);
-	}
-
-	float clamp(float a, float b, float c) {
-		return std::fmax(a, std::fmin(b, c));
-	}
-
 	float log2(float v) {
 		return std::log2f(v);
 	}
