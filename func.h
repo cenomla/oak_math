@@ -27,6 +27,11 @@ namespace oak {
 		return max(a, min(b, c));
 	}
 
+	template<typename T>
+	T lerp(T a, T b, T scale) {
+		return a + (b - a) * scale;
+	}
+
 	float log2(float v);
 	float sin(float a);
 	float cos(float a);
