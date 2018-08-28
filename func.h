@@ -39,6 +39,7 @@ namespace oak {
 	float atan2(float x, float y);
 	float sqrt(float x);
 	float fast_inv_sqrt(float x);
+	bool is_finite(float x);
 
 }
 

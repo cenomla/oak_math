@@ -8,6 +8,10 @@ namespace oak::catagory {
 
 namespace oak {
 
+	struct Ivec2;
+	struct Ivec3;
+	struct Ivec4;
+
 	struct Vec2;
 	struct Vec3;
 	struct Vec4;
@@ -20,6 +24,8 @@ namespace oak {
 		Ivec2() = default;
 		Ivec2(int v);
 		Ivec2(int a, int b);
+		Ivec2(const Ivec3& v);
+		Ivec2(const Ivec4& v);
 
 		int x = 0, y = 0;
 
@@ -30,6 +36,8 @@ namespace oak {
 		Ivec3() = default;
 		Ivec3(int v);
 		Ivec3(int a, int b, int c);
+		Ivec3(const Ivec2& a, const int b);
+		Ivec3(const Ivec4& v);
 
 		int x = 0, y = 0, z = 0;
 
@@ -40,6 +48,8 @@ namespace oak {
 		Ivec4() = default;
 		Ivec4(int v);
 		Ivec4(int a, int b, int c, int d);
+		Ivec4(const Ivec2& a, const int b, const int c);
+		Ivec4(const Ivec3& a, const int b);
 
 		int x = 0, y = 0, z = 0, w = 0;
 

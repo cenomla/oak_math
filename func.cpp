@@ -69,5 +69,9 @@ namespace oak {
 		return x * (1.5f - xhalf * x * x);
 	}
 
+	bool is_finite(float x) {
+		return std::isfinite(x);
+	}
+
 }
 
