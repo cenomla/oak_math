@@ -1,7 +1,7 @@
-#include "vec.h"
+#include "oak_math/vec.h"
 
-#include "func.h"
-#include "mat.h"
+#include "oak_math/func.h"
+#include "oak_math/mat.h"
 
 namespace oak {
 

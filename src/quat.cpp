@@ -1,8 +1,8 @@
-#include "quat.h"
+#include "oak_math/quat.h"
 
-#include "func.h"
-#include "vec.h"
-#include "mat.h"
+#include "oak_math/func.h"
+#include "oak_math/vec.h"
+#include "oak_math/mat.h"
 
 namespace oak {
 

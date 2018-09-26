@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../util/osig_defs.h"
+#include "osig_defs.h"
 
 namespace oak::catagory {
 	struct math {};
