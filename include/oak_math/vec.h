@@ -265,5 +265,8 @@ namespace oak {
 	Vec2 left(const Vec2 v);
 	Vec2 right(const Vec2 v);
 
+	Vec2 reflect(const Vec2 v, const Vec2 n);
+	Vec3 reflect(const Vec3 v, const Vec3 n);
+
 }
 

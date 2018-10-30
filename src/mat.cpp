@@ -287,7 +287,7 @@ namespace oak {
 	}
 
 	Mat4 rotate(const Mat4& src, const Vec3& v) {
-
+		return {};
 	}
 
 	Mat3 translate(const Mat3& src, const Vec2& v) {

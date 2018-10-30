@@ -777,5 +777,13 @@ namespace oak {
 		return { -v.y, v.x };
 	}
 
+	Vec2 reflect(const Vec2 v, const Vec2 n) {
+		return v - 2.f * dot(v, n) * n;
+	}
+
+	Vec3 reflect(const Vec3 v, const Vec3 n) {
+		return v - 2.f * dot(v, n) * n;
+	}
+
 }
 
