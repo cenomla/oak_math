@@ -5,37 +5,13 @@
 
 namespace oak {
 
-	Ivec2::Ivec2(int v) : x{ v }, y{ v } {}
-
-	Ivec2::Ivec2(int a, int b) : x{ a }, y{ b } {}
-
-	Ivec2::Ivec2(const Ivec3& a) : x{ a.x }, y{ a.y } {}
-
-	Ivec2::Ivec2(const Ivec4& a) : x{ a.x }, y{ a.y } {}
-
 	Ivec2::operator Vec2() const {
 		return { static_cast<float>(x), static_cast<float>(y) };
 	}
 
-	Ivec3::Ivec3(int v) : x{ v }, y{ v }, z{ v } {}
-
-	Ivec3::Ivec3(int a, int b, int c) : x{ a }, y{ b }, z{ c } {}
-
-	Ivec3::Ivec3(const Ivec2& a, const int b) : x{ a.x }, y{ a.y }, z{ b } {}
-
-	Ivec3::Ivec3(const Ivec4& v) : x{ v.x }, y{ v.y }, z{ v.z } {}
-
 	Ivec3::operator Vec3() const {
 		return { static_cast<float>(x), static_cast<float>(y), static_cast<float>(z) };
 	}
-
-	Ivec4::Ivec4(int v) : x{ v }, y{ v }, z{ v }, w{ v } {}
-
-	Ivec4::Ivec4(int a, int b, int c, int d) : x{ a }, y{ b }, z{ c }, w{ d } {}
-
-	Ivec4::Ivec4(const Ivec2& a, const int b, const int c) : x{ a.x }, y{ a.y }, z{ b }, w{ c } {}
-
-	Ivec4::Ivec4(const Ivec3& a, const int b) : x{ a.x }, y{ a.y }, z{ a.z }, w{ b } {}
 
 	Ivec4::operator Vec4() const {
 		return { static_cast<float>(x), static_cast<float>(y),
