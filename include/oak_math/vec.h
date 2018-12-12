@@ -22,8 +22,8 @@ namespace oak {
 
 	struct _reflect(oak::catagory::math) Ivec2 {
 		constexpr Ivec2() = default;
-		constexpr Ivec2(int v) : x{ v }, y{ v } {};
-		constexpr Ivec2(int a, int b) : x{ a }, y{ b } {};
+		constexpr Ivec2(int v) : x{ v }, y{ v } {}
+		constexpr Ivec2(int a, int b) : x{ a }, y{ b } {}
 		constexpr Ivec2(const Ivec3& v);
 		constexpr Ivec2(const Ivec4& v);
 
@@ -34,8 +34,8 @@ namespace oak {
 
 	struct _reflect(oak::catagory::math) Ivec3 {
 		constexpr Ivec3() = default;
-		constexpr Ivec3(int v) : x{ v }, y{ v }, z{ v } {};
-		constexpr Ivec3(int a, int b, int c) : x{ a }, y{ b }, z{ c } {};
+		constexpr Ivec3(int v) : x{ v }, y{ v }, z{ v } {}
+		constexpr Ivec3(int a, int b, int c) : x{ a }, y{ b }, z{ c } {}
 		constexpr Ivec3(const Ivec2& a, const int b);
 		constexpr Ivec3(const Ivec4& v);
 
@@ -46,20 +46,20 @@ namespace oak {
 
 	struct _reflect(oak::catagory::math) Ivec4 {
 		constexpr Ivec4() = default;
-		constexpr Ivec4(int v) : x{ v }, y{ v }, z{ v }, w{ v } {};
-		constexpr Ivec4(int a, int b, int c, int d) : x{ a }, y{ b }, z{ c }, w{ d } {};
-		constexpr Ivec4(const Ivec2& a, const int b, const int c) : x{ a.x }, y{ a.y }, z{ b }, w{ c } {};
-		constexpr Ivec4(const Ivec3& a, const int b) : x{ a.x }, y{ a.y }, z{ a.z }, w{ b } {};
+		constexpr Ivec4(int v) : x{ v }, y{ v }, z{ v }, w{ v } {}
+		constexpr Ivec4(int a, int b, int c, int d) : x{ a }, y{ b }, z{ c }, w{ d } {}
+		constexpr Ivec4(const Ivec2& a, const int b, const int c) : x{ a.x }, y{ a.y }, z{ b }, w{ c } {}
+		constexpr Ivec4(const Ivec3& a, const int b) : x{ a.x }, y{ a.y }, z{ a.z }, w{ b } {}
 
 		int x = 0, y = 0, z = 0, w = 0;
 
 		explicit operator Vec4() const;
 	};
 
-	constexpr Ivec2::Ivec2(const Ivec3& v) : x{ v.x }, y{ v.y } {};
-	constexpr Ivec2::Ivec2(const Ivec4& v) : x{ v.x }, y{ v.y } {};
-	constexpr Ivec3::Ivec3(const Ivec2& a, const int b) : x{ a.x }, y{ a.y }, z{ b } {};
-	constexpr Ivec3::Ivec3(const Ivec4& v) : x{ v.x }, y{ v.y }, z{ v.z } {};
+	constexpr Ivec2::Ivec2(const Ivec3& v) : x{ v.x }, y{ v.y } {}
+	constexpr Ivec2::Ivec2(const Ivec4& v) : x{ v.x }, y{ v.y } {}
+	constexpr Ivec3::Ivec3(const Ivec2& a, const int b) : x{ a.x }, y{ a.y }, z{ b } {}
+	constexpr Ivec3::Ivec3(const Ivec4& v) : x{ v.x }, y{ v.y }, z{ v.z } {}
 
 	struct _reflect(oak::catagory::math) Vec2 {
 		Vec2() = default;
