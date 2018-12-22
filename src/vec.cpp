@@ -746,11 +746,11 @@ namespace oak {
 	}
 
 	Vec2 left(const Vec2 v) {
-		return { v.y, -v.x };
+		return { -v.y, v.x };
 	}
 
 	Vec2 right(const Vec2 v) {
-		return { -v.y, v.x };
+		return { v.y, -v.x };
 	}
 
 	Vec2 reflect(const Vec2 v, const Vec2 n) {
