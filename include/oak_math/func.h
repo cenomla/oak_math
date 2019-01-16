@@ -2,8 +2,9 @@
 
 namespace oak {
 
-	float radians(float deg);
-	float pi();
+	constexpr float pi = 3.1415926f;
+
+	float to_radians(float deg);
 	float floor(float v);
 	float ceil(float v);
 	float round(float v);
