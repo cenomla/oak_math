@@ -12,25 +12,30 @@ namespace oak {
 	float abs(float v);
 
 	template<typename T>
-	T min(T a, T b) {
+	constexpr T min(T a, T b) {
 		if (a < b) { return a; }
 		return b;
 	}
 
 	template<typename T>
-	T max(T a, T b) {
+	constexpr T max(T a, T b) {
 		if (a > b) { return a; }
 		return b;
 	}
 
 	template<typename T>
-	T clamp(T a, T b, T c) {
+	constexpr T clamp(T a, T b, T c) {
 		return max(a, min(b, c));
 	}
 
 	template<typename T, typename U>
-	T lerp(T a, T b, U scale) {
+	constexpr T lerp(T a, T b, U scale) {
 		return a + (b - a) * scale;
+	}
+
+	template<typename T>
+	constexpr T sign(T v) {
+		return (T{ 0 } < v) - (T{ 0 } > v);
 	}
 
 	float log2(float v);
