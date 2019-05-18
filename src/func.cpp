@@ -20,12 +20,8 @@ namespace oak {
 		return std::roundf(v);
 	}
 
-	int abs(int v) {
-		return std::abs(v);
-	}
-
-	float abs(float v) {
-		return std::fabs(v);
+	float pow(float v, float e) {
+		return std::pow(v, e);
 	}
 
 	float log2(float v) {
@@ -55,12 +51,12 @@ namespace oak {
 	float fast_inv_sqrt(float x) {
 		float xhalf = 0.5f * x;
 		int v;
-		for (int i = 0; i < 4; i++) {
-			((char*)&v)[i] = ((char*)&x)[i];
+		for (int i = 0; i < 4; ++i) {
+			reinterpret_cast<char*>(&v)[i] = reinterpret_cast<char*>(&x)[i];
 		}
 		v = 0x5f3759df - (v >> 1);
-		for (int i = 0; i < 4; i++) {
-			((char*)&x)[i] = ((char*)&v)[i];
+		for (int i = 0; i < 4; ++i) {
+			reinterpret_cast<char*>(&x)[i] = reinterpret_cast<char*>(&v)[i];
 		}
 		return x * (1.5f - xhalf * x * x);
 	}

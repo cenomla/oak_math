@@ -8,8 +8,17 @@ namespace oak {
 	float floor(float v);
 	float ceil(float v);
 	float round(float v);
-	int abs(int v);
-	float abs(float v);
+	float pow(float v, float e);
+
+	template<typename T>
+	constexpr T sign(T v) {
+		return (T{ 0 } < v) - (T{ 0 } > v);
+	}
+
+	template<typename T>
+	constexpr T abs(T v) {
+		return v * sign(v);
+	}
 
 	template<typename T>
 	constexpr T min(T a, T b) {
@@ -31,11 +40,6 @@ namespace oak {
 	template<typename T, typename U>
 	constexpr T lerp(T a, T b, U scale) {
 		return a + (b - a) * scale;
-	}
-
-	template<typename T>
-	constexpr T sign(T v) {
-		return (T{ 0 } < v) - (T{ 0 } > v);
 	}
 
 	float log2(float v);

@@ -18,39 +18,13 @@ namespace oak {
 			static_cast<float>(z), static_cast<float>(w) };
 	}
 
-	Vec2::Vec2(float a, float b) : x{ a }, y{ b } {}
-
-	Vec2::Vec2(float v) : Vec2{ v, v } {}
-
-	Vec2::Vec2(const Vec3& v) : Vec2{ v.x, v.y } {}
-
-	Vec2::Vec2(const Vec4& v) : Vec2{ v.x, v.y } {}
-
 	Vec2::operator Ivec2() const {
 		return { static_cast<int>(x), static_cast<int>(y) };
 	}
 
-	Vec3::Vec3(float a, float b, float c) : x{ a }, y{ b }, z{ c } {}
-
-	Vec3::Vec3(float v) : Vec3{ v, v, v } {}
-
-	Vec3::Vec3(const Vec4& v) : Vec3{ v.x, v.y, v.z } {}
-
-	Vec3::Vec3(const Vec2& v, float a) : Vec3{ v.x, v.y, a } {}
-
 	Vec3::operator Ivec3() const {
 		return { static_cast<int>(x), static_cast<int>(y), static_cast<int>(z) };
 	}
-
-	Vec4::Vec4(float a, float b, float c, float d) : x{ a }, y{ b }, z{ c }, w{ d } {}
-
-	Vec4::Vec4(float v) : Vec4{ v, v, v, v } {}
-
-	Vec4::Vec4(const Vec2& v, float a, float b) : Vec4{ v.x, v.y, a, b } {}
-
-	Vec4::Vec4(const Vec3& v, float a) : Vec4{ v.x, v.y, v.z, a } {}
-
-	Vec4::Vec4(const Vec2& a, const Vec2& b) : Vec4{ a.x, a.y, b.x, b.y } {}
 
 	Vec4::operator Ivec4() const {
 		return { static_cast<int>(x), static_cast<int>(y), static_cast<int>(z), static_cast<int>(w) };
@@ -104,18 +78,6 @@ namespace oak {
 		return a.x != b.x || a.y != b.y || a.z != b.z || a.w != b.w;
 	}
 
-	Ivec2 operator-(const Ivec2& v) {
-		return Ivec2{ -v.x, -v.y };
-	}
-
-	Ivec3 operator-(const Ivec3& v) {
-		return Ivec3{ -v.x, -v.y, -v.z };
-	}
-
-	Ivec4 operator-(const Ivec4& v) {
-		return Ivec4{ -v.x, -v.y, -v.z, -v.w };
-	}
-
 	Vec2 operator-(const Vec2& v) {
 		return Vec2{ -v.x, -v.y };
 	}
@@ -150,18 +112,6 @@ namespace oak {
 
 	Vec4 operator+(const Vec4& a, const Vec4& b) {
 		return Vec4{ a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w };
-	}
-
-	Ivec2 operator-(const Ivec2& a, const Ivec2& b) {
-		return Ivec2{ a.x - b.x, a.y - b.y };
-	}
-
-	Ivec3 operator-(const Ivec3& a, const Ivec3& b) {
-		return Ivec3{ a.x - b.x, a.y - b.y, a.z - b.z };
-	}
-
-	Ivec4 operator-(const Ivec4& a, const Ivec4& b) {
-		return Ivec4{ a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w };
 	}
 
 	Vec2 operator-(const Vec2& a, const Vec2& b) {
@@ -742,6 +692,10 @@ namespace oak {
 	Vec2 rotate(const Vec2 v, const float angle) {
 		const auto ct = cos(angle);
 		const auto st = sin(angle);
+		return { v.x * ct - v.y * st, v.x * st + v.y * ct };
+	}
+
+	Vec2 rotate(const Vec2 v, float const st, float const ct) {
 		return { v.x * ct - v.y * st, v.x * st + v.y * ct };
 	}
 

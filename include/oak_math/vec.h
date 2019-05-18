@@ -24,8 +24,8 @@ namespace oak {
 		constexpr Ivec2() = default;
 		constexpr Ivec2(int v) : x{ v }, y{ v } {}
 		constexpr Ivec2(int a, int b) : x{ a }, y{ b } {}
-		constexpr Ivec2(const Ivec3& v);
-		constexpr Ivec2(const Ivec4& v);
+		constexpr Ivec2(Ivec3 const& v);
+		constexpr Ivec2(Ivec4 const& v);
 
 		int x = 0, y = 0;
 
@@ -36,8 +36,8 @@ namespace oak {
 		constexpr Ivec3() = default;
 		constexpr Ivec3(int v) : x{ v }, y{ v }, z{ v } {}
 		constexpr Ivec3(int a, int b, int c) : x{ a }, y{ b }, z{ c } {}
-		constexpr Ivec3(const Ivec2& a, const int b);
-		constexpr Ivec3(const Ivec4& v);
+		constexpr Ivec3(Ivec2 const& a, const int b);
+		constexpr Ivec3(Ivec4 const& v);
 
 		int x = 0, y = 0, z = 0;
 
@@ -48,25 +48,25 @@ namespace oak {
 		constexpr Ivec4() = default;
 		constexpr Ivec4(int v) : x{ v }, y{ v }, z{ v }, w{ v } {}
 		constexpr Ivec4(int a, int b, int c, int d) : x{ a }, y{ b }, z{ c }, w{ d } {}
-		constexpr Ivec4(const Ivec2& a, const int b, const int c) : x{ a.x }, y{ a.y }, z{ b }, w{ c } {}
-		constexpr Ivec4(const Ivec3& a, const int b) : x{ a.x }, y{ a.y }, z{ a.z }, w{ b } {}
+		constexpr Ivec4(Ivec2 const& a, int const b, int const c) : x{ a.x }, y{ a.y }, z{ b }, w{ c } {}
+		constexpr Ivec4(Ivec3 const& a, int const b) : x{ a.x }, y{ a.y }, z{ a.z }, w{ b } {}
 
 		int x = 0, y = 0, z = 0, w = 0;
 
 		explicit operator Vec4() const;
 	};
 
-	constexpr Ivec2::Ivec2(const Ivec3& v) : x{ v.x }, y{ v.y } {}
-	constexpr Ivec2::Ivec2(const Ivec4& v) : x{ v.x }, y{ v.y } {}
-	constexpr Ivec3::Ivec3(const Ivec2& a, const int b) : x{ a.x }, y{ a.y }, z{ b } {}
-	constexpr Ivec3::Ivec3(const Ivec4& v) : x{ v.x }, y{ v.y }, z{ v.z } {}
+	constexpr Ivec2::Ivec2(Ivec3 const& v) : x{ v.x }, y{ v.y } {}
+	constexpr Ivec2::Ivec2(Ivec4 const& v) : x{ v.x }, y{ v.y } {}
+	constexpr Ivec3::Ivec3(Ivec2 const& a, int const b) : x{ a.x }, y{ a.y }, z{ b } {}
+	constexpr Ivec3::Ivec3(Ivec4 const& v) : x{ v.x }, y{ v.y }, z{ v.z } {}
 
 	struct _reflect(oak::catagory::math) Vec2 {
-		Vec2() = default;
-		Vec2(float a, float b);
-		Vec2(float v);
-		Vec2(const Vec3& v);
-		Vec2(const Vec4& v);
+		constexpr Vec2() = default;
+		constexpr Vec2(float a, float b) : x{ a }, y{ b } {}
+		constexpr Vec2(float v) : Vec2{ v, v } {}
+		constexpr Vec2(Vec3 const& v);
+		constexpr Vec2(Vec4 const& v);
 
 		explicit operator Ivec2() const;
 
@@ -74,11 +74,11 @@ namespace oak {
 	};
 
 	struct _reflect(oak::catagory::math) Vec3 {
-		Vec3() = default;
-		Vec3(float a, float b, float c);
-		Vec3(float v);
-		Vec3(const Vec4& v);
-		Vec3(const Vec2& v, float a);
+		constexpr Vec3() = default;
+		constexpr Vec3(float a, float b, float c) : x{ a }, y{ b }, z{ c } {}
+		constexpr Vec3(float v) : Vec3{ v, v, v } {}
+		constexpr Vec3(Vec2 const& v, float a) : Vec3{ v.x, v.y, a } {}
+		constexpr Vec3(Vec4 const& v);
 
 		explicit operator Ivec3() const;
 
@@ -86,17 +86,21 @@ namespace oak {
 	};
 
 	struct _reflect(oak::catagory::math) Vec4 {
-		Vec4() = default;
-		Vec4(float a, float b, float c, float d);
-		Vec4(float v);
-		Vec4(const Vec2& v, float a, float b);
-		Vec4(const Vec3& v, float a);
-		Vec4(const Vec2& a, const Vec2& b);
+		constexpr Vec4() = default;
+		constexpr Vec4(float a, float b, float c, float d) : x{ a }, y{ b }, z{ c }, w{ d } {}
+		constexpr Vec4(float v) : Vec4{ v, v, v, v } {}
+		constexpr Vec4(Vec2 const& v, float a, float b) : Vec4{ v.x, v.y, a, b } {}
+		constexpr Vec4(Vec3 const& v, float a) : Vec4{ v.x, v.y, v.z, a } {}
+		constexpr Vec4(Vec2 const& a, Vec2 const& b) : Vec4{ a.x, a.y, b.x, b.y } {}
 
 		explicit operator Ivec4() const;
 
 		float x = 0.0f, y = 0.0f, z = 0.0f, w = 0.0f;
 	};
+
+	constexpr Vec2::Vec2(Vec3 const& v) : Vec2{ v.x, v.y } {}
+	constexpr Vec2::Vec2(Vec4 const& v) : Vec2{ v.x, v.y } {}
+	constexpr Vec3::Vec3(Vec4 const& v) : Vec3{ v.x, v.y, v.z } {}
 
 	bool operator==(const Ivec2& a, const Ivec2& b);
 	bool operator==(const Ivec3& a, const Ivec3& b);
@@ -126,9 +130,18 @@ namespace oak {
 	Vec3 operator+(const Vec3& a, const Vec3& b);
 	Vec4 operator+(const Vec4& a, const Vec4& b);
 
-	Ivec2 operator-(const Ivec2& a, const Ivec2& b);
-	Ivec3 operator-(const Ivec3& a, const Ivec3& b);
-	Ivec4 operator-(const Ivec4& a, const Ivec4& b);
+	constexpr Ivec2 operator-(Ivec2 const& a, Ivec2 const& b) {
+		return Ivec2{ a.x - b.x, a.y - b.y };
+	}
+
+	constexpr Ivec3 operator-(Ivec3 const& a, Ivec3 const& b) {
+		return Ivec3{ a.x - b.x, a.y - b.y, a.z - b.z };
+	}
+
+	constexpr Ivec4 operator-(Ivec4 const& a, Ivec4 const& b) {
+		return Ivec4{ a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w };
+	}
+
 	Vec2 operator-(const Vec2& a, const Vec2& b);
 	Vec3 operator-(const Vec3& a, const Vec3& b);
 	Vec4 operator-(const Vec4& a, const Vec4& b);
@@ -266,6 +279,7 @@ namespace oak {
 	Vec4 normalize(const Vec4& v);
 
 	Vec2 rotate(const Vec2 v, const float angle);
+	Vec2 rotate(const Vec2 v, float const st, float const ct);
 
 	Vec2 left(const Vec2 v);
 	Vec2 right(const Vec2 v);
