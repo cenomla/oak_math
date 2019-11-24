@@ -35,7 +35,7 @@ namespace oak {
 		constexpr Ivec2(Ivec3 const& v);
 		constexpr Ivec2(Ivec4 const& v);
 
-		int x = 0, y = 0;
+		_reflect() int x = 0, _reflect() y = 0;
 
 		explicit operator Vec2() const;
 	};
@@ -47,7 +47,7 @@ namespace oak {
 		constexpr Ivec3(Ivec2 const& a, const int b);
 		constexpr Ivec3(Ivec4 const& v);
 
-		int x = 0, y = 0, z = 0;
+		_reflect() int x = 0, _reflect() y = 0, _reflect() z = 0;
 
 		explicit operator Vec3() const;
 	};
@@ -59,7 +59,7 @@ namespace oak {
 		constexpr Ivec4(Ivec2 const& a, int const b, int const c) : x{ a.x }, y{ a.y }, z{ b }, w{ c } {}
 		constexpr Ivec4(Ivec3 const& a, int const b) : x{ a.x }, y{ a.y }, z{ a.z }, w{ b } {}
 
-		int x = 0, y = 0, z = 0, w = 0;
+		_reflect() int x = 0, _reflect() y = 0, _reflect() z = 0, _reflect() w = 0;
 
 		explicit operator Vec4() const;
 	};
@@ -78,7 +78,7 @@ namespace oak {
 
 		explicit operator Ivec2() const;
 
-		float x = 0.0f, y = 0.0f;
+		_reflect() float x = 0.0f, _reflect() y = 0.0f;
 	};
 
 	struct _reflect(oak::catagory::math) Vec3 {
@@ -90,7 +90,7 @@ namespace oak {
 
 		explicit operator Ivec3() const;
 
-		float x = 0.0f, y = 0.0f, z = 0.0f;
+		_reflect() float x = 0.0f, _reflect() y = 0.0f, _reflect() z = 0.0f;
 	};
 
 	struct _reflect(oak::catagory::math) Vec4 {
@@ -103,7 +103,7 @@ namespace oak {
 
 		explicit operator Ivec4() const;
 
-		float x = 0.0f, y = 0.0f, z = 0.0f, w = 0.0f;
+		_reflect() float x = 0.0f, _reflect() y = 0.0f, _reflect() z = 0.0f, _reflect() w = 0.0f;
 	};
 
 	constexpr Vec2::Vec2(Vec3 const& v) : Vec2{ v.x, v.y } {}
