@@ -28,6 +28,15 @@ namespace oak {
 		return b + ((uv * a.w) + uuv) * 2.0f;
 	}
 
+	float length(Quat const& q) {
+		return sqrt(q.x * q.x + q.y * q.y + q.z * q.z + q.w * q.w);
+	}
+
+	Quat normalize(Quat const& q) {
+		auto l = length(q);
+		return l == 0.0f ? q : Quat{ q.x / l, q.y / l, q.z / l, q.w / l };
+	}
+
 	Mat3 toMat3(const Quat& q) {
 		float qxx = q.x * q.x;
 		float qyy = q.y * q.y;

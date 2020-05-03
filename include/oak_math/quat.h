@@ -15,6 +15,9 @@ namespace oak {
 
 	Vec3 operator*(const Quat& a, const Vec3& b);
 
+	float length(Quat const& q);
+	Quat normalize(Quat const& q);
+
 	Mat3 toMat3(const Quat& q);
 	Mat4 toMat4(const Quat& q);
 }

@@ -238,13 +238,12 @@ namespace oak {
 	}
 
 	Mat4 perspective(float fov, float ratio, float near, float far) {
-		float fsn = far - near;
 		float tfovh = tan(fov / 2.0f);
 		return Mat4 {
 			Mat4::column_type{ 1.0f / (ratio * tfovh), 0.0f, 0.0f, 0.0f },
 			Mat4::column_type{ 0.0f, 1.0f / tfovh, 0.0f, 0.0f },
-			Mat4::column_type{ 0.0f, 0.0f, far / (near - far), -1.0f },
-			Mat4::column_type{ 0.0f, 0.0f, -(far * near) / fsn, 0.0f }
+			Mat4::column_type{ 0.0f, 0.0f, -(far + near) / (far - near), -1.0f },
+			Mat4::column_type{ 0.0f, 0.0f, -(2.f * far * near) / (far - near), 0.0f }
 		};
 	}
 
@@ -257,7 +256,7 @@ namespace oak {
 			Mat4::column_type{ s.x, u.x, -f.x, 0.0f },
 			Mat4::column_type{ s.y, u.y, -f.y, 0.0f },
 			Mat4::column_type{ s.z, u.z, -f.z, 0.0f },
-			Mat4::column_type{ -dot(s, eye), -dot(u, eye), -dot(f, eye), 1.0f }
+			Mat4::column_type{ -dot(s, eye), -dot(u, eye), dot(f, eye), 1.0f }
 		};
 	}
 

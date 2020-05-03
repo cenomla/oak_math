@@ -676,17 +676,17 @@ namespace oak {
 
 	Vec2 normalize(const Vec2& v) {
 		auto l = length(v);
-		return l == 0.0f ? v : v / length(v);
+		return l == 0.0f ? v : v / l;
 	}
 
 	Vec3 normalize(const Vec3& v) {
 		auto l = length(v);
-		return l == 0.0f ? v : v / length(v);
+		return l == 0.0f ? v : v / l;
 	}
 
 	Vec4 normalize(const Vec4& v) {
 		auto l = length(v);
-		return l == 0.0f ? v : v / length(v);
+		return l == 0.0f ? v : v / l;
 	}
 
 	Vec2 rotate(const Vec2 v, const float angle) {
