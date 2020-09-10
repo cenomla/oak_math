@@ -3,12 +3,14 @@
 namespace oak {
 
 	constexpr float pi = 3.1415926f;
+	constexpr float e = 2.7182818f;
 
 	float to_radians(float deg);
 	float floor(float v);
 	float ceil(float v);
 	float round(float v);
 	float pow(float v, float e);
+	float exp(float v);
 
 	template<typename T>
 	constexpr T sign(T v) {

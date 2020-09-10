@@ -24,6 +24,10 @@ namespace oak {
 		return std::pow(v, e);
 	}
 
+	float exp(float v) {
+		return std::exp(v);
+	}
+
 	float log2(float v) {
 		return std::log2f(v);
 	}
