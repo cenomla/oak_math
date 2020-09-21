@@ -1,16 +1,18 @@
 #pragma once
 
+#include "detail/defines.h"
+
 namespace oak {
 
 	constexpr float pi = 3.1415926f;
 	constexpr float e = 2.7182818f;
 
-	float to_radians(float deg);
-	float floor(float v);
-	float ceil(float v);
-	float round(float v);
-	float pow(float v, float e);
-	float exp(float v);
+	OAK_MATH_API float to_radians(float deg);
+	OAK_MATH_API float floor(float v);
+	OAK_MATH_API float ceil(float v);
+	OAK_MATH_API float round(float v);
+	OAK_MATH_API float pow(float v, float e);
+	OAK_MATH_API float exp(float v);
 
 	template<typename T>
 	constexpr T sign(T v) {
@@ -44,14 +46,14 @@ namespace oak {
 		return a + (b - a) * scale;
 	}
 
-	float log2(float v);
-	float sin(float a);
-	float cos(float a);
-	float tan(float a);
-	float atan2(float x, float y);
-	float sqrt(float x);
-	float fast_inv_sqrt(float x);
-	bool is_finite(float x);
+	OAK_MATH_API float log2(float v);
+	OAK_MATH_API float sin(float a);
+	OAK_MATH_API float cos(float a);
+	OAK_MATH_API float tan(float a);
+	OAK_MATH_API float atan2(float x, float y);
+	OAK_MATH_API float sqrt(float x);
+	OAK_MATH_API float fast_inv_sqrt(float x);
+	OAK_MATH_API bool is_finite(float x);
 
 }
 

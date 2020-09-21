@@ -1,7 +1,9 @@
-#include "oak_math/vec.h"
+#define OAK_MATH_EXPORT_SYMBOLS
 
-#include "oak_math/func.h"
-#include "oak_math/mat.h"
+#include <oak_math/vec.h>
+
+#include <oak_math/func.h>
+#include <oak_math/mat.h>
 
 namespace oak {
 

@@ -1,4 +1,6 @@
-#include "oak_math/func.h"
+#define OAK_MATH_EXPORT_SYMBOLS
+
+#include <oak_math/func.h>
 
 #include <cmath>
 
