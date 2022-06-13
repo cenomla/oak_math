@@ -287,5 +287,7 @@ namespace oak {
 	OAK_MATH_API Vec2 reflect(const Vec2 v, const Vec2 n);
 	OAK_MATH_API Vec3 reflect(const Vec3 v, const Vec3 n);
 
+	OAK_MATH_API bool refract(Vec3 *out, Vec3 const& v, Vec3 const& n, float ratio);
+
 }
 

@@ -717,5 +717,17 @@ namespace oak {
 		return v - 2.f * dot(v, n) * n;
 	}
 
+	bool refract(Vec3 *out, Vec3 const& v, Vec3 const& n, float ratio) {
+		auto uv = normalize(v);
+		float dt = dot(uv, n);
+		float descr = 1.f - ratio*ratio*(1.f - dt*dt);
+
+		if (descr < 0.f)
+			return false;
+
+		*out = ratio*(uv - n*dt) - n*sqrt(descr);
+		return true;
+	}
+
 }
 
