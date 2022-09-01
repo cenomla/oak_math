@@ -13,6 +13,16 @@ namespace oak {
 	OAK_MATH_API float round(float v);
 	OAK_MATH_API float pow(float v, float e);
 	OAK_MATH_API float exp(float v);
+	OAK_MATH_API float exp2(float v);
+	OAK_MATH_API float ln(float v);
+	OAK_MATH_API float log2(float v);
+	OAK_MATH_API float sin(float a);
+	OAK_MATH_API float cos(float a);
+	OAK_MATH_API float tan(float a);
+	OAK_MATH_API float atan2(float x, float y);
+	OAK_MATH_API float sqrt(float x);
+	OAK_MATH_API float fast_inv_sqrt(float x);
+	OAK_MATH_API bool is_finite(float x);
 
 	template<typename T>
 	constexpr T sign(T v) {
@@ -45,15 +55,6 @@ namespace oak {
 	constexpr T lerp(T a, T b, U scale) {
 		return a + (b - a) * scale;
 	}
-
-	OAK_MATH_API float log2(float v);
-	OAK_MATH_API float sin(float a);
-	OAK_MATH_API float cos(float a);
-	OAK_MATH_API float tan(float a);
-	OAK_MATH_API float atan2(float x, float y);
-	OAK_MATH_API float sqrt(float x);
-	OAK_MATH_API float fast_inv_sqrt(float x);
-	OAK_MATH_API bool is_finite(float x);
 
 }
 

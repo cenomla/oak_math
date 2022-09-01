@@ -30,6 +30,14 @@ namespace oak {
 		return std::exp(v);
 	}
 
+	float exp2(float v) {
+		return std::exp2(v);
+	}
+
+	float ln(float v) {
+		return std::log(v);
+	}
+
 	float log2(float v) {
 		return std::log2f(v);
 	}
