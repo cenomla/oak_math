@@ -26,7 +26,12 @@ namespace oak {
 
 	template<typename T>
 	constexpr T sign(T v) {
-		return (T{ 0 } < v) - (T{ 0 } > v);
+		return (v > T{ 0 }) - (v < T{ 0 });
+	}
+
+	template<typename T>
+	constexpr T non_zero_sign(T v) {
+		return (v >= T{ 0 }) - (v < T{ 0 });
 	}
 
 	template<typename T>
