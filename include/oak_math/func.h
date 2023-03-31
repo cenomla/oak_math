@@ -24,6 +24,8 @@ namespace oak {
 	OAK_MATH_API float fast_inv_sqrt(float x);
 	OAK_MATH_API bool is_finite(float x);
 
+	OAK_MATH_API double floor(double v);
+
 	template<typename T>
 	constexpr T sign(T v) {
 		return (v > T{ 0 }) - (v < T{ 0 });

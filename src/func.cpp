@@ -79,5 +79,9 @@ namespace oak {
 		return std::isfinite(x);
 	}
 
+	double floor(double v) {
+		return std::floor(v);
+	}
+
 }
 
