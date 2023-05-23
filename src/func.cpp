@@ -2,7 +2,7 @@
 
 #include <oak_math/func.h>
 
-#include <cmath>
+#include <math.h>
 
 namespace oak {
 
@@ -11,55 +11,67 @@ namespace oak {
 	}
 
 	float floor(float v) {
-		return std::floor(v);
+		return ::floorf(v);
 	}
 
 	float ceil(float v) {
-		return std::ceil(v);
+		return ::ceilf(v);
 	}
 
 	float round(float v) {
-		return std::roundf(v);
+		return ::roundf(v);
 	}
 
 	float pow(float v, float e) {
-		return std::pow(v, e);
+		return ::powf(v, e);
 	}
 
 	float exp(float v) {
-		return std::exp(v);
+		return ::expf(v);
 	}
 
 	float exp2(float v) {
-		return std::exp2(v);
+		return ::exp2f(v);
 	}
 
 	float ln(float v) {
-		return std::log(v);
+		return ::logf(v);
 	}
 
 	float log2(float v) {
-		return std::log2f(v);
+		return ::log2f(v);
 	}
 
 	float sin(float a) {
-		return std::sin(a);
+		return ::sinf(a);
 	}
 
 	float cos(float a) {
-		return std::cos(a);
+		return ::cosf(a);
 	}
 
 	float tan(float a) {
-		return std::tan(a);
+		return ::tanf(a);
+	}
+
+	float asin(float a) {
+		return ::asinf(a);
+	}
+
+	float acos(float a) {
+		return ::acosf(a);
+	}
+
+	float atan(float a) {
+		return ::atanf(a);
 	}
 
 	float atan2(float x, float y) {
-		return std::atan2(x, y);
+		return ::atan2f(x, y);
 	}
 
 	float sqrt(float x) {
-		return std::sqrt(x);
+		return ::sqrtf(x);
 	}
 
 	float fast_inv_sqrt(float x) {
@@ -76,11 +88,11 @@ namespace oak {
 	}
 
 	bool is_finite(float x) {
-		return std::isfinite(x);
+		return isfinite(x);
 	}
 
 	double floor(double v) {
-		return std::floor(v);
+		return ::floor(v);
 	}
 
 }
