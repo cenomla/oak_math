@@ -21,7 +21,7 @@ namespace oak {
 		Mat2(const Mat3& v);
 		Mat2(const Mat4& v);
 
-		column_type value[2];
+		column_type columns[2];
 	};
 
 	struct _reflect(oak::catagory::math) OAK_MATH_API Mat3 {
@@ -37,7 +37,7 @@ namespace oak {
 		Mat3(const Mat2& v);
 		Mat3(const Mat4& v);
 
-		column_type value[3];
+		column_type columns[3];
 	};
 
 	struct _reflect(oak::catagory::math) OAK_MATH_API Mat4 {
@@ -54,7 +54,7 @@ namespace oak {
 		Mat4(const Mat2& v);
 		Mat4(const Mat3& v);
 
-		column_type value[4];
+		column_type columns[4];
 	};
 
 	OAK_MATH_API Mat2 operator*(const Mat2& a, float v);

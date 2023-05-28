@@ -91,6 +91,10 @@ namespace oak {
 		return isfinite(x);
 	}
 
+	float fmod(float x, float y) {
+		return ::fmodf(x, y);
+	}
+
 	double floor(double v) {
 		return ::floor(v);
 	}
