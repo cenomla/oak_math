@@ -91,6 +91,10 @@ namespace oak {
 		return isfinite(x);
 	}
 
+	bool is_nan(float x) {
+		return isnan(x);
+	}
+
 	float fmod(float x, float y) {
 		return ::fmodf(x, y);
 	}

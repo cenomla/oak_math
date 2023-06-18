@@ -26,6 +26,7 @@ namespace oak {
 	OAK_MATH_API float sqrt(float x);
 	OAK_MATH_API float fast_inv_sqrt(float x);
 	OAK_MATH_API bool is_finite(float x);
+	OAK_MATH_API bool is_nan(float x);
 	OAK_MATH_API float fmod(float x, float y);
 
 	OAK_MATH_API double floor(double v);
