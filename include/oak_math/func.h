@@ -4,8 +4,11 @@
 
 namespace oak {
 
-	constexpr float pi = 3.1415926f;
-	constexpr float e = 2.7182818f;
+	constexpr float m_pi = 3.1415926f;
+	constexpr float m_e = 2.7182818f;
+
+	constexpr double m_l_pi = 3.14159265358979323846;
+	constexpr double m_l_e = 2.71828182845904523536;
 
 	OAK_MATH_API float to_radians(float deg);
 	OAK_MATH_API float floor(float v);
@@ -30,15 +33,17 @@ namespace oak {
 	OAK_MATH_API float fmod(float x, float y);
 
 	OAK_MATH_API double floor(double v);
+	OAK_MATH_API double sqrt(double v);
+	OAK_MATH_API double exp(double v);
 
 	template<typename T>
 	constexpr T sign(T v) {
-		return (v > T{ 0 }) - (v < T{ 0 });
+		return static_cast<T>(v > T{0}) - static_cast<T>(v < T{0});
 	}
 
 	template<typename T>
 	constexpr T non_zero_sign(T v) {
-		return (v >= T{ 0 }) - (v < T{ 0 });
+		return static_cast<T>(v >= T{0}) - static_cast<T>(v < T{0});
 	}
 
 	template<typename T>

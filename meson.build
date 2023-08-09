@@ -1,4 +1,4 @@
-project('oak_math', 'cpp')
+project('oak_math', 'cpp', default_options : ['cpp_std=c++17', 'warning_level=3', 'werror=true'])
 
 includes = include_directories('include')
 

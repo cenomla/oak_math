@@ -7,7 +7,7 @@
 namespace oak {
 
 	float radians(float deg) {
-		return deg / 180.0f * pi;
+		return deg / 180.0f * m_pi;
 	}
 
 	float floor(float v) {
@@ -22,8 +22,8 @@ namespace oak {
 		return ::roundf(v);
 	}
 
-	float pow(float v, float e) {
-		return ::powf(v, e);
+	float pow(float v, float exp) {
+		return ::powf(v, exp);
 	}
 
 	float exp(float v) {
@@ -101,6 +101,14 @@ namespace oak {
 
 	double floor(double v) {
 		return ::floor(v);
+	}
+
+	double sqrt(double v) {
+		return ::sqrt(v);
+	}
+
+	double exp(double v) {
+		return ::exp(v);
 	}
 
 }
