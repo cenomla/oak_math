@@ -74,6 +74,10 @@ namespace oak {
 		return ::sqrtf(x);
 	}
 
+	float cbrt(float x) {
+		return ::cbrtf(x);
+	}
+
 	float fast_inv_sqrt(float x) {
 		float xhalf = 0.5f * x;
 		int v;
