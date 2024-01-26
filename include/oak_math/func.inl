@@ -4,23 +4,23 @@
 #include <immintrin.h>
 #endif
 
-extern "C" float powf(float b, float e);
-extern "C" float expf(float x);
-extern "C" float exp2f(float x);
-extern "C" float logf(float x);
-extern "C" float log2f(float x);
-extern "C" float sinf(float x);
-extern "C" float cosf(float x);
-extern "C" float tanf(float x);
-extern "C" float asinf(float x);
-extern "C" float acosf(float x);
-extern "C" float atanf(float x);
-extern "C" float atan2f(float x, float y);
-extern "C" float sqrtf(float x);
-extern "C" float cbrtf(float x);
-extern "C" float fmodf(float x, float y);
-extern "C" double sqrt(double x);
-extern "C" double exp(double x);
+extern "C" float powf(float b, float e) noexcept(true);
+extern "C" float expf(float x) noexcept(true);
+extern "C" float exp2f(float x) noexcept(true);
+extern "C" float logf(float x) noexcept(true);
+extern "C" float log2f(float x) noexcept(true);
+extern "C" float sinf(float x) noexcept(true);
+extern "C" float cosf(float x) noexcept(true);
+extern "C" float tanf(float x) noexcept(true);
+extern "C" float asinf(float x) noexcept(true);
+extern "C" float acosf(float x) noexcept(true);
+extern "C" float atanf(float x) noexcept(true);
+extern "C" float atan2f(float x, float y) noexcept(true);
+extern "C" float sqrtf(float x) noexcept(true);
+extern "C" float cbrtf(float x) noexcept(true);
+extern "C" float fmodf(float x, float y) noexcept(true);
+extern "C" double sqrt(double x) noexcept(true);
+extern "C" double exp(double x) noexcept(true);
 
 
 namespace oak {
