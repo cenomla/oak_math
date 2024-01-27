@@ -1,9 +1,28 @@
 #include <string.h>
 
 #ifdef _MSC_VER
-#include <immintrin.h>
+#include <smmintrin.h>
 #endif
 
+#ifdef _MSC_VER
+extern "C" __declspec(dllimport) float powf(float b, float e);
+extern "C" __declspec(dllimport) float expf(float x);
+extern "C" __declspec(dllimport) float exp2f(float x);
+extern "C" __declspec(dllimport) float logf(float x);
+extern "C" __declspec(dllimport) float log2f(float x);
+extern "C" __declspec(dllimport) float sinf(float x);
+extern "C" __declspec(dllimport) float cosf(float x);
+extern "C" __declspec(dllimport) float tanf(float x);
+extern "C" __declspec(dllimport) float asinf(float x);
+extern "C" __declspec(dllimport) float acosf(float x);
+extern "C" __declspec(dllimport) float atanf(float x);
+extern "C" __declspec(dllimport) float atan2f(float x, float y);
+extern "C" __declspec(dllimport) float sqrtf(float x);
+extern "C" __declspec(dllimport) float cbrtf(float x);
+extern "C" __declspec(dllimport) float fmodf(float x, float y);
+extern "C" __declspec(dllimport) double sqrt(double x);
+extern "C" __declspec(dllimport) double exp(double x);
+#else
 extern "C" float powf(float b, float e) noexcept(true);
 extern "C" float expf(float x) noexcept(true);
 extern "C" float exp2f(float x) noexcept(true);
@@ -21,6 +40,7 @@ extern "C" float cbrtf(float x) noexcept(true);
 extern "C" float fmodf(float x, float y) noexcept(true);
 extern "C" double sqrt(double x) noexcept(true);
 extern "C" double exp(double x) noexcept(true);
+#endif
 
 
 namespace oak {
@@ -141,8 +161,8 @@ namespace oak {
 
 	inline double floor(double x) {
 #ifdef _MSC_VER
-		__m128 v = _mm_set_sd(x);
-		__m128 rv = _mm_floor_sd(v, v);
+		__m128d v = _mm_set_sd(x);
+		__m128d rv = _mm_floor_sd(v, v);
 		return _mm_cvtsd_f64(rv);
 #else
 		return __builtin_floor(x);
