@@ -601,6 +601,18 @@ namespace oak {
 		return (a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w);
 	}
 
+	inline int dot(const Ivec2& a, const Ivec2& b) {
+		return (a.x * b.x) + (a.y * b.y);
+	}
+
+	inline int dot(const Ivec3& a, const Ivec3& b) {
+		return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
+	}
+
+	inline int dot(const Ivec4& a, const Ivec4& b) {
+		return (a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w);
+	}
+
 	inline float cross(const Vec2& a, const Vec2& b) {
 		return a.x * b.y - a.y * b.x;
 	}

@@ -253,6 +253,10 @@ namespace oak {
 	float dot(const Vec3& a, const Vec3& b);
 	float dot(const Vec4& a, const Vec4& b);
 
+	int dot(const Ivec2& a, const Ivec2& b);
+	int dot(const Ivec3& a, const Ivec3& b);
+	int dot(const Ivec4& a, const Ivec4& b);
+
 	float cross(const Vec2& a, const Vec2& b);
 	Vec2 cross(float s, const Vec2& a);
 	Vec2 cross(const Vec2& a, float s);
