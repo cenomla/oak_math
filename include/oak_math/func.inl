@@ -22,6 +22,24 @@ extern "C" __declspec(dllimport) float cbrtf(float x);
 extern "C" __declspec(dllimport) float fmodf(float x, float y);
 extern "C" __declspec(dllimport) double sqrt(double x);
 extern "C" __declspec(dllimport) double exp(double x);
+#elif __ANDROID__
+extern "C" float powf(float b, float e);
+extern "C" float expf(float x);
+extern "C" float exp2f(float x);
+extern "C" float logf(float x);
+extern "C" float log2f(float x);
+extern "C" float sinf(float x);
+extern "C" float cosf(float x);
+extern "C" float tanf(float x);
+extern "C" float asinf(float x);
+extern "C" float acosf(float x);
+extern "C" float atanf(float x);
+extern "C" float atan2f(float x, float y);
+extern "C" float sqrtf(float x);
+extern "C" float cbrtf(float x);
+extern "C" float fmodf(float x, float y);
+extern "C" double sqrt(double x);
+extern "C" double exp(double x);
 #else
 extern "C" float powf(float b, float e) noexcept(true);
 extern "C" float expf(float x) noexcept(true);
