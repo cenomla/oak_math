@@ -62,6 +62,10 @@ namespace oak {
 	Mat3 operator*(const Mat3& a, float v);
 	Mat4 operator*(const Mat4& a, float v);
 
+	Mat2 operator+(const Mat2& a, const Mat2& b);
+	Mat3 operator+(const Mat3& a, const Mat3& b);
+	Mat4 operator+(const Mat4& a, const Mat4& b);
+
 	Mat2 operator*(const Mat2& a, const Mat2& b);
 	Mat3 operator*(const Mat3& a, const Mat3& b);
 	Mat4 operator*(const Mat4& a, const Mat4& b);
@@ -97,6 +101,7 @@ namespace oak {
 
 	Mat3 make_mat3(const Vec2& pos, float rotation, float scale);
 	Mat3 make_mat3(const Vec2& pos, float rotation, const Vec2& scale);
+	Mat3 cross_product_matrix(Vec3 const& v);
 
 	Mat2 outer_product(const Vec2& a, const Vec2& b);
 	Mat3 outer_product(const Vec3& a, const Vec3& b);

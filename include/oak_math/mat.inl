@@ -47,6 +47,30 @@ namespace oak {
 		return Mat4{ a.columns[0] * v, a.columns[1] * v, a.columns[2] * v, a.columns[3] * v };
 	}
 
+	inline Mat2 operator+(const Mat2& a, const Mat2& b) {
+		return Mat2{
+			a.columns[0] + b.columns[0],
+			a.columns[1] + b.columns[1],
+		};
+	}
+
+	inline Mat3 operator+(const Mat3& a, const Mat3& b) {
+		return Mat3{
+			a.columns[0] + b.columns[0],
+			a.columns[1] + b.columns[1],
+			a.columns[2] + b.columns[2],
+		};
+	}
+
+	inline Mat4 operator+(const Mat4& a, const Mat4& b) {
+		return Mat4{
+			a.columns[0] + b.columns[0],
+			a.columns[1] + b.columns[1],
+			a.columns[2] + b.columns[2],
+			a.columns[3] + b.columns[3],
+		};
+	}
+
 	inline Mat2 operator*(const Mat2& a, const Mat2& b) {
 		return Mat2{
 			Mat2::column_type{ a.columns[0] * b.columns[0].x + a.columns[1] * b.columns[0].y },
@@ -88,13 +112,15 @@ namespace oak {
 	}
 
 	inline float det(const Mat3& src) {
-		return
-			src.columns[0].x * src.columns[1].y * src.columns[2].z +
-			src.columns[1].x * src.columns[2].y * src.columns[0].z +
-			src.columns[2].x * src.columns[0].y * src.columns[1].z -
-			src.columns[2].x * src.columns[1].y * src.columns[0].z -
-			src.columns[1].x * src.columns[0].y * src.columns[2].z -
-			src.columns[0].x * src.columns[2].y * src.columns[1].z;
+		float a = src.columns[0].x;
+		float b = src.columns[1].x;
+		float c = src.columns[2].x;
+
+		float c00 = (src.columns[1].y * src.columns[2].z - src.columns[2].y * src.columns[1].z);
+		float c10 = -(src.columns[0].y * src.columns[2].z - src.columns[2].y * src.columns[0].z);
+		float c20 = (src.columns[0].x * src.columns[1].z - src.columns[1].y * src.columns[0].z);
+
+		return a*c00 + b*c10 + c*c20;
 	}
 
 	inline float det(const Mat4& src) {
@@ -166,20 +192,23 @@ namespace oak {
 	inline Mat3 inverse(const Mat3& src) {
 		float ood = 1.0f / det(src);
 
+		float c00 = (src.columns[1].y * src.columns[2].z - src.columns[2].y * src.columns[1].z);
+		float c01 = -(src.columns[1].x * src.columns[2].z - src.columns[2].x * src.columns[1].z);
+		float c02 = (src.columns[1].x * src.columns[2].y - src.columns[2].x * src.columns[1].y);
+
+		float c10 = -(src.columns[0].y * src.columns[2].z - src.columns[2].y * src.columns[0].z);
+		float c11 = (src.columns[0].x * src.columns[2].z - src.columns[2].x * src.columns[0].z);
+		float c12 = -(src.columns[0].x * src.columns[2].y - src.columns[2].x * src.columns[0].y);
+
+		float c20 = (src.columns[0].x * src.columns[1].z - src.columns[1].y * src.columns[0].z);
+		float c21 = -(src.columns[0].x * src.columns[1].z - src.columns[1].x * src.columns[0].z);
+		float c22 = (src.columns[0].x * src.columns[1].y - src.columns[1].x * src.columns[0].y);
+
 		return Mat3{
-			Mat3::column_type{
-			(src.columns[1].y * src.columns[2].z - src.columns[2].y * src.columns[1].z) * ood,
-			- (src.columns[1].x * src.columns[2].z - src.columns[2].x * src.columns[1].z) * ood,
-			(src.columns[1].x * src.columns[2].y - src.columns[2].x * src.columns[1].y) * ood },
-			Mat3::column_type{
-			- (src.columns[0].y * src.columns[2].z - src.columns[2].y * src.columns[0].z) * ood,
-			(src.columns[0].x * src.columns[2].z - src.columns[2].x * src.columns[0].z) * ood,
-			- (src.columns[0].x * src.columns[2].y - src.columns[2].x * src.columns[0].y) *ood },
-			Mat3::column_type{
-			(src.columns[0].x * src.columns[1].z - src.columns[1].y * src.columns[0].z) * ood,
-			- (src.columns[0].x * src.columns[1].z - src.columns[1].x * src.columns[0].z) * ood,
-			(src.columns[0].x * src.columns[1].y - src.columns[1].x * src.columns[0].y) * ood }
-		};
+			Mat3::column_type{ c00, c10, c20 },
+			Mat3::column_type{ c01, c11, c21 },
+			Mat3::column_type{ c02, c12, c22 },
+		} * ood;
 	}
 
 	inline Mat4 inverse(const Mat4& src) {
@@ -323,6 +352,14 @@ namespace oak {
 
 	inline Mat3 make_mat3(const Vec2& pos, float r, const Vec2& s) {
 		return translate(Mat3{ 1.0f }, pos) * scale(Mat3{ 1.0f }, s) * rotate(Mat3{ 1.0f }, r);
+	}
+
+	inline Mat3 cross_product_matrix(Vec3 const& v) {
+		return Mat3{
+			Mat3::column_type{ 0.f, v.z, -v.y },
+			Mat3::column_type{ -v.z, 0.f, v.x },
+			Mat3::column_type{ v.y, -v.x, 0.f },
+		};
 	}
 
 	inline Mat2 outer_product(const Vec2& a, const Vec2& b) {
