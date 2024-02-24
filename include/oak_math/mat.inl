@@ -118,7 +118,7 @@ namespace oak {
 
 		float c00 = (src.columns[1].y * src.columns[2].z - src.columns[2].y * src.columns[1].z);
 		float c10 = -(src.columns[0].y * src.columns[2].z - src.columns[2].y * src.columns[0].z);
-		float c20 = (src.columns[0].x * src.columns[1].z - src.columns[1].y * src.columns[0].z);
+		float c20 = (src.columns[0].y * src.columns[1].z - src.columns[1].y * src.columns[0].z);
 
 		return a*c00 + b*c10 + c*c20;
 	}
