@@ -47,19 +47,17 @@ namespace oak {
 
 	template<typename T>
 	constexpr T abs(T v) {
-		return v * sign(v);
+		return v < T{ 0 } ? -v : v;
 	}
 
 	template<typename T>
 	constexpr T min(T a, T b) {
-		if (a < b) { return a; }
-		return b;
+		return a < b ? a : b;
 	}
 
 	template<typename T>
 	constexpr T max(T a, T b) {
-		if (a > b) { return a; }
-		return b;
+		return a > b ? a : b;
 	}
 
 	template<typename T>
