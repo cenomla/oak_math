@@ -133,6 +133,11 @@ namespace oak {
 		return a + (b - a) * scale;
 	}
 
+	template<typename T>
+	constexpr T sqr(T a) {
+		return a * a;
+	}
+
 }
 
 // Implementation
