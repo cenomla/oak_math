@@ -174,6 +174,10 @@ namespace oak {
 	constexpr Vec3 operator/(const Vec3& a, const Vec3& b);
 	constexpr Vec4 operator/(const Vec4& a, const Vec4& b);
 
+	constexpr Ivec2 operator&(const Ivec2& a, const Ivec2& b);
+	constexpr Ivec3 operator&(const Ivec3& a, const Ivec3& b);
+	constexpr Ivec4 operator&(const Ivec4& a, const Ivec4& b);
+
 	constexpr Ivec2& operator+=(Ivec2& a, const Ivec2& b);
 	constexpr Ivec3& operator+=(Ivec3& a, const Ivec3& b);
 	constexpr Ivec4& operator+=(Ivec4& a, const Ivec4& b);
@@ -518,6 +522,18 @@ namespace oak {
 
 	constexpr Vec4 operator/(const Vec4& a, const Vec4& b) {
 		return Vec4{ a.x / b.x, a.y / b.y, a.z / b.z, a.w / b.w };
+	}
+
+	constexpr Ivec2 operator&(const Ivec2& a, const Ivec2& b) {
+		return { a.x & b.x, a.y & b.y };
+	}
+
+	constexpr Ivec3 operator&(const Ivec3& a, const Ivec3& b) {
+		return { a.x & b.x, a.y & b.y, a.z & b.z };
+	}
+
+	constexpr Ivec4 operator&(const Ivec4& a, const Ivec4& b) {
+		return { a.x & b.x, a.y & b.y, a.z & b.z, a.w & b.w };
 	}
 
 	constexpr Ivec2& operator+=(Ivec2& a, const Ivec2& b) {
