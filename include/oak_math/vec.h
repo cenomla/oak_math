@@ -9,6 +9,10 @@ namespace oak {
 	struct Ivec3;
 	struct Ivec4;
 
+	struct Uvec2;
+	struct Uvec3;
+	struct Uvec4;
+
 	struct Vec2;
 	struct Vec3;
 	struct Vec4;
@@ -33,7 +37,7 @@ namespace oak {
 		constexpr Ivec3() = default;
 		constexpr Ivec3(int v) : x{ v }, y{ v }, z{ v } {}
 		constexpr Ivec3(int a, int b, int c) : x{ a }, y{ b }, z{ c } {}
-		constexpr Ivec3(Ivec2 const& a, const int b);
+		constexpr Ivec3(Ivec2 const& a, int b);
 		constexpr Ivec3(Ivec4 const& v);
 
 		_reflect() int x = 0, _reflect() y = 0, _reflect() z = 0;
@@ -45,8 +49,8 @@ namespace oak {
 		constexpr Ivec4() = default;
 		constexpr Ivec4(int v) : x{ v }, y{ v }, z{ v }, w{ v } {}
 		constexpr Ivec4(int a, int b, int c, int d) : x{ a }, y{ b }, z{ c }, w{ d } {}
-		constexpr Ivec4(Ivec2 const& a, int const b, int const c) : x{ a.x }, y{ a.y }, z{ b }, w{ c } {}
-		constexpr Ivec4(Ivec3 const& a, int const b) : x{ a.x }, y{ a.y }, z{ a.z }, w{ b } {}
+		constexpr Ivec4(Ivec2 const& a, int b, int c) : x{ a.x }, y{ a.y }, z{ b }, w{ c } {}
+		constexpr Ivec4(Ivec3 const& a, int b) : x{ a.x }, y{ a.y }, z{ a.z }, w{ b } {}
 
 		_reflect() int x = 0, _reflect() y = 0, _reflect() z = 0, _reflect() w = 0;
 
@@ -55,8 +59,43 @@ namespace oak {
 
 	constexpr Ivec2::Ivec2(Ivec3 const& v) : x{ v.x }, y{ v.y } {}
 	constexpr Ivec2::Ivec2(Ivec4 const& v) : x{ v.x }, y{ v.y } {}
-	constexpr Ivec3::Ivec3(Ivec2 const& a, int const b) : x{ a.x }, y{ a.y }, z{ b } {}
+	constexpr Ivec3::Ivec3(Ivec2 const& a, int b) : x{ a.x }, y{ a.y }, z{ b } {}
 	constexpr Ivec3::Ivec3(Ivec4 const& v) : x{ v.x }, y{ v.y }, z{ v.z } {}
+
+	struct _reflect() Uvec2 {
+		constexpr Uvec2() = default;
+		constexpr Uvec2(unsigned int v) : x{ v }, y{ v } {}
+		constexpr Uvec2(unsigned int a, unsigned int b) : x{ a }, y{ b } {}
+		constexpr Uvec2(Uvec3 const& v);
+		constexpr Uvec2(Uvec4 const& v);
+
+		_reflect() unsigned int x = 0, _reflect() y = 0;
+	};
+
+	struct _reflect() Uvec3 {
+		constexpr Uvec3() = default;
+		constexpr Uvec3(unsigned int v) : x{ v }, y{ v }, z{ v } {}
+		constexpr Uvec3(unsigned int a, unsigned int b, unsigned int c) : x{ a }, y{ b }, z{ c } {}
+		constexpr Uvec3(Uvec2 const& a, unsigned int b);
+		constexpr Uvec3(Uvec4 const& v);
+
+		_reflect() unsigned int x = 0, _reflect() y = 0, _reflect() z = 0;
+	};
+
+	struct _reflect() Uvec4 {
+		constexpr Uvec4() = default;
+		constexpr Uvec4(unsigned int v) : x{ v }, y{ v }, z{ v }, w{ v } {}
+		constexpr Uvec4(unsigned int a, unsigned int b, unsigned int c, unsigned int d) : x{ a }, y{ b }, z{ c }, w{ d } {}
+		constexpr Uvec4(Uvec2 const& a, unsigned int b, unsigned int c) : x{ a.x }, y{ a.y }, z{ b }, w{ c } {}
+		constexpr Uvec4(Uvec3 const& a, unsigned int b) : x{ a.x }, y{ a.y }, z{ a.z }, w{ b } {}
+
+		_reflect() unsigned int x = 0, _reflect() y = 0, _reflect() z = 0, _reflect() w = 0;
+	};
+
+	constexpr Uvec2::Uvec2(Uvec3 const& v) : x{ v.x }, y{ v.y } {}
+	constexpr Uvec2::Uvec2(Uvec4 const& v) : x{ v.x }, y{ v.y } {}
+	constexpr Uvec3::Uvec3(Uvec2 const& a, unsigned int b) : x{ a.x }, y{ a.y }, z{ b } {}
+	constexpr Uvec3::Uvec3(Uvec4 const& v) : x{ v.x }, y{ v.y }, z{ v.z } {}
 
 	struct _reflect() Vec2 {
 		constexpr Vec2() = default;
